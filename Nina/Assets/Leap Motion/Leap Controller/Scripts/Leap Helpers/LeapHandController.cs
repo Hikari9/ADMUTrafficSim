@@ -1,33 +1,43 @@
 using UnityEngine;
 using System.Collections;
 using Leap;
+using System;
 
 /// <summary>
 /// gets updates from leap api
 /// assigns leap hand data to unity hand
 /// </summary>
-public class LeapHandController : MonoBehaviour 
+public class LeapHandController : MonoBehaviour
 {
 	public UnityHand[] unityHands;
 	public UnityHandSettings handSettings;
-
+	public Controller controller;
+	
 	private float timeVisible = 0.2f;
 					
 	void Start () 
 	{
+		
+		controller = new Controller();
+		
 		//attach controller methods to Leap's hand updates
 		LeapInputEx.HandUpdated += OnHandUpdated;
 		LeapInputEx.HandFound += OnHandFound;
 		LeapInputEx.HandLost += OnHandLost;
 		
 		//enable gestures
-		LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPESWIPE);
-		LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPECIRCLE);
-		LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPEKEYTAP);
-		LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPESCREENTAP);
+		controller.EnableGesture(Gesture.GestureType.TYPE_SWIPE);
+		// LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPECIRCLE);
+		// LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPEKEYTAP);
+		// LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPESCREENTAP);
 
 		unityHands[0].AssignSettings(handSettings);
 		unityHands[1].AssignSettings(handSettings);
+		// Debug.Log("init");
+		
+		controller.Config.SetFloat("Gesture.Swipe.MinLength", 50.0f);
+		controller.Config.SetFloat("Gesture.Swipe.MinVelocity", 100f);
+		controller.Config.Save();
 	}
 
 	void Update()
@@ -39,12 +49,76 @@ public class LeapHandController : MonoBehaviour
 	private void OnHandFound(Hand h)
 	{
 		Messenger.Broadcast<int>(SIG.HANDFOUND.ToString(), h.Id); //broadcast new hand ID to registered listeners
+		
+		Debug.Log("handfound yay");
+		
 	}
     	  	
 	private void OnHandUpdated(Hand h)
 	{
 		bool undeterminedHand = true;
+		
+		Frame frame = controller.Frame();
+		GestureList gestures = frame.Gestures ();
+		for (int i = 0; i < gestures.Count; i++) {
+			Gesture gesture = gestures [i];
 
+			switch (gesture.Type) {
+			case Gesture.GestureType.TYPE_CIRCLE:
+				CircleGesture circle = new CircleGesture (gesture);
+
+                // Calculate clock direction using the angle between circle normal and pointable
+				String clockwiseness;
+				if (circle.Pointable.Direction.AngleTo (circle.Normal) <= Math.PI / 2) {
+					//Clockwise if angle is less than 90 degrees
+					clockwiseness = "clockwise";
+				} else {
+					clockwiseness = "counterclockwise";
+				}
+
+				float sweptAngle = 0;
+
+                // Calculate angle swept since last frame
+				if (circle.State != Gesture.GestureState.STATE_START) {
+					CircleGesture previousUpdate = new CircleGesture (controller.Frame (1).Gesture (circle.Id));
+					sweptAngle = (circle.Progress - previousUpdate.Progress) * 360;
+				}
+
+				Debug.Log ("  Circle id: " + circle.Id
+                               + ", " + circle.State
+                               + ", progress: " + circle.Progress
+                               + ", radius: " + circle.Radius
+                               + ", angle: " + sweptAngle
+                               + ", " + clockwiseness);
+				break;
+			case Gesture.GestureType.TYPE_SWIPE:
+				SwipeGesture swipe = new SwipeGesture (gesture);
+				Debug.Log ("  Swipe id: " + swipe.Id
+                               + ", " + swipe.State
+                               + ", position: " + swipe.Position
+                               + ", direction: " + swipe.Direction
+                               + ", speed: " + swipe.Speed);
+				break;
+			case Gesture.GestureType.TYPE_KEY_TAP:
+				KeyTapGesture keytap = new KeyTapGesture (gesture);
+				Debug.Log ("  Tap id: " + keytap.Id
+                               + ", " + keytap.State
+                               + ", position: " + keytap.Position
+                               + ", direction: " + keytap.Direction);
+				break;
+			case Gesture.GestureType.TYPE_SCREEN_TAP:
+				ScreenTapGesture screentap = new ScreenTapGesture (gesture);
+				Debug.Log ("  Tap id: " + screentap.Id
+                               + ", " + screentap.State
+                               + ", position: " + screentap.Position
+                               + ", direction: " + screentap.Direction);
+				break;
+			default:
+				Debug.Log ("  Unknown gesture type.");
+				break;
+			}
+		}
+		
 		for (int i = 0; i < 2; i++)
 		{
 			if ((unityHands[i]).hand != null && unityHands[i].hand.Id == h.Id && unityHands[i].isHandDetermined)
@@ -176,5 +250,4 @@ public class LeapHandController : MonoBehaviour
 		LeapInputEx.HandUpdated -= OnHandUpdated;
 		LeapInputEx.HandLost -= OnHandLost;
 	}
-
 }
