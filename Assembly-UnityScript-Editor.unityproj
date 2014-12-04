@@ -63,17 +63,17 @@
      <None Include="Assets\EasyRoads3D Free\Shaders\EasyRoads3D-Normal-Diffuse.shader" />
      <None Include="Assets\EasyRoads3D Free\_readme.txt" />
      <None Include="Assets\EasyRoads3D Free\Shaders\EasyRoads3D-Road-Edit-Mode.shader" />
+ <Reference Include="EasyRoads3DEditor">
+ <HintPath>/Users/VA/ADMUTrafficSim/Assets/EasyRoads3D Free/Editor/EasyRoads3DEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="EasyRoads3D">
+ <HintPath>/Users/VA/ADMUTrafficSim/Assets/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
+ </Reference>
  <Reference Include="LeapCSharp.NET3.5">
  <HintPath>/Users/VA/ADMUTrafficSim/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
- <Reference Include="EasyRoads3D">
- <HintPath>/Users/VA/ADMUTrafficSim/Assets/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
- </Reference>
- <Reference Include="EasyRoads3DEditor">
- <HintPath>/Users/VA/ADMUTrafficSim/Assets/EasyRoads3D Free/Editor/EasyRoads3DEditor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
