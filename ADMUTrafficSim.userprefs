@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< Updated upstream
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/EasyRoads3D Free/_manual.html">
     <Files>
@@ -6,6 +7,10 @@
       <File FileName="Assets/Scripts/RoadMaker.cs" Line="8" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench />
+>>>>>>> Stashed changes
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
