@@ -29,13 +29,16 @@ public class LeapHandController : MonoBehaviour
 		controller.EnableGesture(Gesture.GestureType.TYPE_SWIPE);
 		// LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPECIRCLE);
 		// LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPEKEYTAP);
-		// LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPESCREENTAP);
+		LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPESCREENTAP);
 
 		unityHands[0].AssignSettings(handSettings);
 		unityHands[1].AssignSettings(handSettings);
 		// Debug.Log("init");
 		
-		controller.Config.SetFloat("Gesture.Swipe.MinLength", 50.0f);
+		controller.Config.SetFloat("Gesture.ScreenTap.MinForwardVelocity", 0.1f);
+		controller.Config.SetFloat("Gesture.ScreenTap.HistorySeconds", 0.5f);
+		controller.Config.SetFloat("Gesture.ScreenTap.MinDistance", 0.5f);
+		controller.Config.SetFloat("Gesture.Swipe.MinLength", 80.0f);
 		controller.Config.SetFloat("Gesture.Swipe.MinVelocity", 100f);
 		controller.Config.Save();
 	}
@@ -93,22 +96,29 @@ public class LeapHandController : MonoBehaviour
 				break;
 			case Gesture.GestureType.TYPE_SWIPE:
 				SwipeGesture swipe = new SwipeGesture (gesture);
+				Vector vec = swipe.Direction;
 				Debug.Log ("  Swipe id: " + swipe.Id
                                + ", " + swipe.State
                                + ", position: " + swipe.Position
                                + ", direction: " + swipe.Direction
                                + ", speed: " + swipe.Speed);
+				if(Math.Abs(vec.x)<1 && vec.z<0)
+					Debug.Log("STOP SIGNAL");
+				else if(vec.x < 0)
+					Debug.Log("RIGHT-HANDED GO");
+				else
+					Debug.Log("LEFT-HANDED GO");
 				break;
 			case Gesture.GestureType.TYPE_KEY_TAP:
 				KeyTapGesture keytap = new KeyTapGesture (gesture);
-				Debug.Log ("  Tap id: " + keytap.Id
+				Debug.Log ("  KTap id: " + keytap.Id
                                + ", " + keytap.State
                                + ", position: " + keytap.Position
                                + ", direction: " + keytap.Direction);
 				break;
 			case Gesture.GestureType.TYPE_SCREEN_TAP:
 				ScreenTapGesture screentap = new ScreenTapGesture (gesture);
-				Debug.Log ("  Tap id: " + screentap.Id
+				Debug.Log ("  STap id: " + screentap.Id
                                + ", " + screentap.State
                                + ", position: " + screentap.Position
                                + ", direction: " + screentap.Direction);
