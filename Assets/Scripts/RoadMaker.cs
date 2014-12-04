@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class RoadMaker : MonoBehaviour {
+
+
 
 	// Use this for initialization
 	void Start () {
