@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Blender\Simple Car\SimpleCar.cs" />
      <Compile Include="Assets\EasyRoads3D Free\scripts\EasyRoads3DTerrainID.cs" />
      <Compile Include="Assets\EasyRoads3D Free\scripts\MarkerScript.cs" />
      <Compile Include="Assets\EasyRoads3D Free\scripts\RoadObjectScript.cs" />
