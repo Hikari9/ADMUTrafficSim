@@ -1,10 +1,17 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Blender\Simple Car\SimpleCar.cs">
     <Files>
       <File FileName="Assets\EasyRoads3D Free\_manual.html" Line="1" Column="1" />
       <File FileName="Assets\Blender\Simple Car\SimpleCar.cs" Line="16" Column="39" />
       <File FileName="Assets\EasyRoads3D Free\Shaders\EasyRoads3D-Surface.shader" Line="13" Column="21" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Skyboxes\_skybox info.txt">
+    <Files>
+      <File FileName="Assets\Standard Assets\Skyboxes\_skybox info.txt" Line="1" Column="1" />
+>>>>>>> abe9a67ac1a415343f5b6eb81cebcc1229b20651
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -10,6 +10,7 @@ EndProject
 Project("{BE9A0219-94FE-0427-1695-CF3754062167}") = "ADMUTrafficSim", "Assembly-UnityScript-firstpass.unityproj", "{AC56744F-DFA1-8454-53BD-2FB5C48A10EC}"
 EndProject
 Project("{BE9A0219-94FE-0427-1695-CF3754062167}") = "ADMUTrafficSim", "Assembly-UnityScript-Editor.unityproj", "{F40B7B8E-A1F2-0C84-FE3A-F026985C79C8}"
+Project("{BE9A0219-94FE-0427-1695-CF3754062167}") = "ADMUTrafficSim", "Assembly-UnityScript.unityproj", "{BC09DF11-53CB-9EF7-46C1-970C97D665BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,11 +38,16 @@ Global
 		{F40B7B8E-A1F2-0C84-FE3A-F026985C79C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F40B7B8E-A1F2-0C84-FE3A-F026985C79C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F40B7B8E-A1F2-0C84-FE3A-F026985C79C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC09DF11-53CB-9EF7-46C1-970C97D665BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC09DF11-53CB-9EF7-46C1-970C97D665BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC09DF11-53CB-9EF7-46C1-970C97D665BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC09DF11-53CB-9EF7-46C1-970C97D665BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 																			GlobalSection(MonoDevelopProperties) = preSolution
+																		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
