@@ -1,0 +1,1 @@
+Assets/Standard Assets/Tree Creator/Trees/BigTree_textures/Materials/translucency_gloss.mat
