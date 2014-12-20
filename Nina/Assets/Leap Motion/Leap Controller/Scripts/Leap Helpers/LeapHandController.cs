@@ -38,10 +38,7 @@ public class LeapHandController : MonoBehaviour
 		
 		//enable gestures
 		controller.EnableGesture(Gesture.GestureType.TYPE_SWIPE);
-		// LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPECIRCLE);
-		// LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPEKEYTAP);
-		LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPESCREENTAP);
-
+		
 		unityHands[0].AssignSettings(handSettings);
 		unityHands[1].AssignSettings(handSettings);
 		// Debug.Log("init");
@@ -69,7 +66,7 @@ public class LeapHandController : MonoBehaviour
 			
 			if(tf_elapsed>0 && Recent.Count>0) {
 				
-				foreach(KeyValuePair<int, List<SwipeGesture>> kvp in Recent) {
+				outer: foreach(KeyValuePair<int, List<SwipeGesture>> kvp in Recent) {
 					List<SwipeGesture> lis = kvp.Value;
 					
 					int i = 0;
@@ -84,122 +81,76 @@ public class LeapHandController : MonoBehaviour
 						i++;
 					}
 					
-					float distance = a.Position.DistanceTo(b.Position);
-					// Debug.Log("Swipe id: " + a.Id + " " + distance + " " + Math.Abs(a.Position.x - b.Position.x));
+					float x_dist = Math.Abs(a.Position.x-b.Position.x);
+					float y_dist = Math.Abs(a.Position.y-b.Position.y);
+					float z_dist = Math.Abs(a.Position.z-b.Position.z);
 					
-					if(Math.Abs(a.Position.x - b.Position.x)>5f) {
+					Vector pn = a.Hands.Rightmost.PalmNormal;
+					// Debug.Log(pn);
+					
+					//"STOP" signal
+					if(z_dist>y_dist && z_dist>x_dist && pn.z < -0.5f && pn.x > -0.5f) {
+						if(a.Direction.z > 0)
+							continue;
+						
+						//DO STOP HERE
+						
+						// Debug.Log("STOP! " + x_dist + " " + z_dist + " " + pn.x + " " + pn.z);
+						ResetConsecutive();
+						break;
+					}
+					//"GO" signal
+					else if(Math.Abs(a.Position.x - b.Position.x)>5f) {
+						if(a.Direction.x > 0)
+							continue;
+						
 						c_start = frame.Timestamp/1000000;
 						c_count++;
-						// Debug.Log("valid " + c_count);
 						
+						// Debug.Log("valid " + c_count);
 						if(c_count==3) {
-							Debug.Log("GO!");
-							c_count = 0;
-							c_start = -1;
-							c_elapsed = 0;
+							//DO GO HERE
+							
+							// Debug.Log("GO!");
+							ResetConsecutive();
 						}
 						
 						break;
 					}
+					
 				}
 				
-				tf_start = -1;
-				tf_elapsed = 0;
-				Recent.Clear();
+				ResetTimeFrame();
 			}
 			
-			if(c_elapsed>1.5f) {
-				// Debug.Log("cleared " + c_elapsed);
-				c_count = 0;
-				c_start = -1;
-				c_elapsed = 0;
+			if(c_elapsed>2f) {
+				ResetConsecutive();
 			}
 		}
 	}
 	
-	private void OnHandFound(Hand h)
-	{
+	private void OnHandFound(Hand h) {
 		Messenger.Broadcast<int>(SIG.HANDFOUND.ToString(), h.Id); //broadcast new hand ID to registered listeners
-		
-		// Debug.Log("handfound yay");
 	}
  	
-	private void OnHandUpdated(Hand h)
-	{
+	private void OnHandUpdated(Hand h) {
 		bool undeterminedHand = true;
 		
 		Frame frame = controller.Frame();
-		
 		GestureList gestures = frame.Gestures ();
 		
 		for (int i = 0; i < gestures.Count; i++) {
 			Gesture gesture = gestures[i];
 			
-			// Debug.Log(frame.Timestamp/1000000);
-			switch (gesture.Type) {
-			case Gesture.GestureType.TYPE_CIRCLE:
-				CircleGesture circle = new CircleGesture (gesture);
-
-                // Calculate clock direction using the angle between circle normal and pointable
-				String clockwiseness;
-				if (circle.Pointable.Direction.AngleTo (circle.Normal) <= Math.PI / 2) {
-					//Clockwise if angle is less than 90 degrees
-					clockwiseness = "clockwise";
-				} else {
-					clockwiseness = "counterclockwise";
-				}
-
-				float sweptAngle = 0;
-
-                // Calculate angle swept since last frame
-				if (circle.State != Gesture.GestureState.STATE_START) {
-					CircleGesture previousUpdate = new CircleGesture (controller.Frame (1).Gesture (circle.Id));
-					sweptAngle = (circle.Progress - previousUpdate.Progress) * 360;
-				}
-
-				Debug.Log ("  Circle id: " + circle.Id
-                               + ", " + circle.State
-                               + ", progress: " + circle.Progress
-                               + ", radius: " + circle.Radius
-                               + ", angle: " + sweptAngle
-                               + ", " + clockwiseness);
-				break;
-			case Gesture.GestureType.TYPE_SWIPE:
+			if(gesture.Type==Gesture.GestureType.TYPE_SWIPE) {
 				SwipeGesture swipe = new SwipeGesture (gesture);
 				
-				if(swipe.Direction.x > 0)
-					break;
-					
 				if(!Recent.ContainsKey(swipe.Id)) {
 					Recent.Add(swipe.Id, new List<SwipeGesture>());
 					tf_start = frame.Timestamp/1000000;
 				}
 				
 				Recent[swipe.Id].Add(swipe);
-				
-				// Debug.Log (tf_elapsed + "  Swipe id: " + swipe.Id
-                               // + ", " + swipe.State
-                               // + ", position: " + swipe.Position
-                               // + ", direction: " + swipe.Direction
-                               // + ", speed: " + swipe.Speed);
-				break;
-			case Gesture.GestureType.TYPE_KEY_TAP:
-				KeyTapGesture keytap = new KeyTapGesture (gesture);
-				Debug.Log ("  KTap id: " + keytap.Id
-                               + ", " + keytap.State
-                               + ", position: " + keytap.Position
-                               + ", direction: " + keytap.Direction);
-				break;
-			case Gesture.GestureType.TYPE_SCREEN_TAP:
-				ScreenTapGesture screentap = new ScreenTapGesture (gesture);
-				Debug.Log ("  STap id: " + screentap.Id
-                               + ", " + screentap.State
-                               + ", position: " + screentap.Position
-                               + ", direction: " + screentap.Direction);
-				break;
-			default:
-				Debug.Log ("  Unknown gesture type.");
-				break;
 			}
 			
 			if(i==gestures.Count-1)
@@ -328,8 +279,18 @@ public class LeapHandController : MonoBehaviour
 		unityHands[1].hand = rightMost;
 	}
 	
-		
+	private void ResetConsecutive() {
+		c_count = 0;
+		c_start = -1;
+		c_elapsed = 0;
+	}
 
+	private void ResetTimeFrame() {
+		tf_start = -1;
+		tf_elapsed = 0;
+		Recent.Clear();
+	}
+	
 	private void OnDestroy()
 	{
 		//necessary to clean delegate assignment between scenes

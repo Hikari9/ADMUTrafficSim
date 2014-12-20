@@ -63,7 +63,6 @@
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Hand\UnityHandSettings.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs" />
-     <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapMMDAController.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapUnityExtensions.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Objects\LeapBasicObject.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Objects\LeapGameObject.cs" />
