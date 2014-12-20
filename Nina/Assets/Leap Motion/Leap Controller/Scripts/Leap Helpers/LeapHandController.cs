@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using Leap;
 using System;
+using System.Collections.Generic;
 
 /// <summary>
 /// gets updates from leap api
@@ -13,12 +14,22 @@ public class LeapHandController : MonoBehaviour
 	public UnityHandSettings handSettings;
 	public Controller controller;
 	
+	private Dictionary<int, List<SwipeGesture> > Recent;
+	private long tf_elapsed;
+	private long tf_start = -1;
+	private long c_start = -1;
+	private long c_elapsed;
+	private int c_count = 0;
+	
 	private float timeVisible = 0.2f;
 					
-	void Start () 
+	void Start ()
 	{
 		
 		controller = new Controller();
+		Recent = new Dictionary<int, List<SwipeGesture> >();
+		tf_elapsed = 0;
+		c_elapsed = 0;
 		
 		//attach controller methods to Leap's hand updates
 		LeapInputEx.HandUpdated += OnHandUpdated;
@@ -38,8 +49,8 @@ public class LeapHandController : MonoBehaviour
 		controller.Config.SetFloat("Gesture.ScreenTap.MinForwardVelocity", 0.1f);
 		controller.Config.SetFloat("Gesture.ScreenTap.HistorySeconds", 0.5f);
 		controller.Config.SetFloat("Gesture.ScreenTap.MinDistance", 0.5f);
-		controller.Config.SetFloat("Gesture.Swipe.MinLength", 80.0f);
-		controller.Config.SetFloat("Gesture.Swipe.MinVelocity", 100f);
+		controller.Config.SetFloat("Gesture.Swipe.MinLength", 10.0f);
+		controller.Config.SetFloat("Gesture.Swipe.MinVelocity", 10f);
 		controller.Config.Save();
 	}
 
@@ -47,25 +58,84 @@ public class LeapHandController : MonoBehaviour
 	{
 		//process the Leap message pump
 		LeapInputEx.Update();
+		
+		Frame frame = controller.Frame();
+		
+		if(tf_start!=-1) {
+			tf_elapsed = frame.Timestamp/1000000 - tf_start;
+			
+			if(c_start!=-1)
+				c_elapsed = frame.Timestamp/1000000 - c_start;
+			
+			if(tf_elapsed>0 && Recent.Count>0) {
+				
+				foreach(KeyValuePair<int, List<SwipeGesture>> kvp in Recent) {
+					List<SwipeGesture> lis = kvp.Value;
+					
+					int i = 0;
+					SwipeGesture a = null;
+					SwipeGesture b = null;
+					// Debug.Log(lis.Count);
+					foreach(SwipeGesture sg in lis) {
+						if(i==0)
+							a = sg;
+						if(i==lis.Count-1)
+							b = sg;
+						i++;
+					}
+					
+					float distance = a.Position.DistanceTo(b.Position);
+					// Debug.Log("Swipe id: " + a.Id + " " + distance + " " + Math.Abs(a.Position.x - b.Position.x));
+					
+					if(Math.Abs(a.Position.x - b.Position.x)>5f) {
+						c_start = frame.Timestamp/1000000;
+						c_count++;
+						// Debug.Log("valid " + c_count);
+						
+						if(c_count==3) {
+							Debug.Log("GO!");
+							c_count = 0;
+							c_start = -1;
+							c_elapsed = 0;
+						}
+						
+						break;
+					}
+				}
+				
+				tf_start = -1;
+				tf_elapsed = 0;
+				Recent.Clear();
+			}
+			
+			if(c_elapsed>1.5f) {
+				// Debug.Log("cleared " + c_elapsed);
+				c_count = 0;
+				c_start = -1;
+				c_elapsed = 0;
+			}
+		}
 	}
 	
 	private void OnHandFound(Hand h)
 	{
 		Messenger.Broadcast<int>(SIG.HANDFOUND.ToString(), h.Id); //broadcast new hand ID to registered listeners
 		
-		Debug.Log("handfound yay");
-		
+		// Debug.Log("handfound yay");
 	}
-    	  	
+ 	
 	private void OnHandUpdated(Hand h)
 	{
 		bool undeterminedHand = true;
 		
 		Frame frame = controller.Frame();
+		
 		GestureList gestures = frame.Gestures ();
+		
 		for (int i = 0; i < gestures.Count; i++) {
-			Gesture gesture = gestures [i];
-
+			Gesture gesture = gestures[i];
+			
+			// Debug.Log(frame.Timestamp/1000000);
 			switch (gesture.Type) {
 			case Gesture.GestureType.TYPE_CIRCLE:
 				CircleGesture circle = new CircleGesture (gesture);
@@ -96,18 +166,22 @@ public class LeapHandController : MonoBehaviour
 				break;
 			case Gesture.GestureType.TYPE_SWIPE:
 				SwipeGesture swipe = new SwipeGesture (gesture);
-				Vector vec = swipe.Direction;
-				Debug.Log ("  Swipe id: " + swipe.Id
-                               + ", " + swipe.State
-                               + ", position: " + swipe.Position
-                               + ", direction: " + swipe.Direction
-                               + ", speed: " + swipe.Speed);
-				if(Math.Abs(vec.x)<1 && vec.z<0)
-					Debug.Log("STOP SIGNAL");
-				else if(vec.x < 0)
-					Debug.Log("RIGHT-HANDED GO");
-				else
-					Debug.Log("LEFT-HANDED GO");
+				
+				if(swipe.Direction.x > 0)
+					break;
+					
+				if(!Recent.ContainsKey(swipe.Id)) {
+					Recent.Add(swipe.Id, new List<SwipeGesture>());
+					tf_start = frame.Timestamp/1000000;
+				}
+				
+				Recent[swipe.Id].Add(swipe);
+				
+				// Debug.Log (tf_elapsed + "  Swipe id: " + swipe.Id
+                               // + ", " + swipe.State
+                               // + ", position: " + swipe.Position
+                               // + ", direction: " + swipe.Direction
+                               // + ", speed: " + swipe.Speed);
 				break;
 			case Gesture.GestureType.TYPE_KEY_TAP:
 				KeyTapGesture keytap = new KeyTapGesture (gesture);
@@ -127,6 +201,9 @@ public class LeapHandController : MonoBehaviour
 				Debug.Log ("  Unknown gesture type.");
 				break;
 			}
+			
+			if(i==gestures.Count-1)
+				tf_start = frame.Timestamp/1000000;
 		}
 		
 		for (int i = 0; i < 2; i++)
