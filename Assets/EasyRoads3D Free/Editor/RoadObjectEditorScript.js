@@ -127,7 +127,7 @@ if(target.objectType < 2){
 #if UNITY_4_3
 
 #else
-Undo.RegisterUndo(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain leveling");
+Undo.RecordObject(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain leveling");
 #endif
 
 
@@ -591,7 +591,7 @@ if(GUILayout.Button ("Update Edges", GUILayout.Width(175))){
 #if UNITY_4_3
 
 #else
-Undo.RegisterUndo(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain smooth");
+Undo.RecordObject(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain smooth");
 #endif
 target.OQCODQCQOC.OQQDCDQQDC(target.smoothDistance, 0);
 }
@@ -609,7 +609,7 @@ if(GUILayout.Button ("Update Surrounding", GUILayout.Width(175))){
 #if UNITY_4_3
 
 #else
-Undo.RegisterUndo(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain smooth");
+Undo.RecordObject(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain smooth");
 #endif
 target.OQCODQCQOC.OQQDCDQQDC(target.smoothSurDistance, 1);
 }

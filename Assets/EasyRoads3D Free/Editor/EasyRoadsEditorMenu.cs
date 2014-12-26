@@ -154,7 +154,7 @@ List<Transform> rObj = new List<Transform>();
 #if UNITY_4_3
 
 #else
-Undo.RegisterUndo(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain leveling");
+Undo.RecordObject(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain leveling");
 #endif
 foreach(RoadObjectScript script in scripts) {
 if(script.transform != target.transform) rObj.Add(script.transform);
