@@ -46,14 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CarMovement.cs" />
-     <Compile Include="Assets\CarSpawner.cs" />
-     <Compile Include="Assets\CommandReceiver.cs" />
      <Compile Include="Assets\EasyRoads3D Free\scripts\EasyRoads3DTerrainID.cs" />
      <Compile Include="Assets\EasyRoads3D Free\scripts\MarkerScript.cs" />
      <Compile Include="Assets\EasyRoads3D Free\scripts\RoadObjectScript.cs" />
      <Compile Include="Assets\EasyRoads3D Free\scripts\SurfaceScript.cs" />
-     <Compile Include="Assets\KeyLook.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Hand Types\FingerLineRender.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Hand Types\HandModel.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Hand Types\HandTypeBase.cs" />
@@ -115,6 +111,11 @@
      <Compile Include="Assets\Leap Motion\Scenes Pack\Scripts\Leap Scenes\Weapons\CameraLerp.cs" />
      <Compile Include="Assets\Leap Motion\Scenes Pack\Scripts\Leap Scenes\Weapons\InstantiateObject.cs" />
      <Compile Include="Assets\Leap Motion\Scenes Pack\Scripts\Leap Scenes\Weapons\Projectile.cs" />
+     <Compile Include="Assets\Scripts\CarMovement.cs" />
+     <Compile Include="Assets\Scripts\CarSpawner.cs" />
+     <Compile Include="Assets\Scripts\CommandReceiver.cs" />
+     <Compile Include="Assets\Scripts\Glow.cs" />
+     <Compile Include="Assets\Scripts\KeyLook.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\TrafficSimulator.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
