@@ -1,162 +1,50 @@
 using UnityEngine;
 using System.Collections;
 using Leap;
-using System;
-using System.Collections.Generic;
 
 /// <summary>
 /// gets updates from leap api
 /// assigns leap hand data to unity hand
 /// </summary>
-public class LeapHandController : MonoBehaviour
+public class LeapHandController : MonoBehaviour 
 {
 	public UnityHand[] unityHands;
 	public UnityHandSettings handSettings;
-	public Controller controller;
-	
-	// for debugging
-	public bool debugMode = false;
-	
-	// constants
-	public const int GO_TARGET_COUNT = 3;
-	
-	// members
-	
-	private Dictionary<int, List<SwipeGesture> > Recent;
-	private long tf_elapsed;
-	private long tf_start = -1;
-	private long c_start = -1;
-	private long c_elapsed;
-	private int c_count = 0;
-	
+
 	private float timeVisible = 0.2f;
 					
-	void Start ()
+	void Start () 
 	{
-		
-		controller = new Controller();
-		Recent = new Dictionary<int, List<SwipeGesture> >();
-		tf_elapsed = 0;
-		c_elapsed = 0;
-		
 		//attach controller methods to Leap's hand updates
 		LeapInputEx.HandUpdated += OnHandUpdated;
 		LeapInputEx.HandFound += OnHandFound;
 		LeapInputEx.HandLost += OnHandLost;
 		
 		//enable gestures
-		controller.EnableGesture(Gesture.GestureType.TYPE_SWIPE);
-		
+		LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPESWIPE);
+		LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPECIRCLE);
+		LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPEKEYTAP);
+		LeapInputEx.Controller.EnableGesture(Gesture.GestureType.TYPESCREENTAP);
+
 		unityHands[0].AssignSettings(handSettings);
 		unityHands[1].AssignSettings(handSettings);
-		// Debug.Log("init");
-		
-		controller.Config.SetFloat("Gesture.ScreenTap.MinForwardVelocity", 0.1f);
-		controller.Config.SetFloat("Gesture.ScreenTap.HistorySeconds", 0.5f);
-		controller.Config.SetFloat("Gesture.ScreenTap.MinDistance", 0.5f);
-		controller.Config.SetFloat("Gesture.Swipe.MinLength", 10.0f);
-		controller.Config.SetFloat("Gesture.Swipe.MinVelocity", 10f);
-		controller.Config.Save();
 	}
 
 	void Update()
 	{
 		//process the Leap message pump
 		LeapInputEx.Update();
-		
-		Frame frame = controller.Frame();
-		
-		if(tf_start!=-1) {
-			Log ("Entered check");
-			tf_elapsed = frame.Timestamp/1000000 - tf_start;
-			
-			if(c_start!=-1)
-				c_elapsed = frame.Timestamp/1000000 - c_start;
-			
-			if(tf_elapsed>0 && Recent.Count>0) {
-				
-				foreach(KeyValuePair<int, List<SwipeGesture>> kvp in Recent) {
-					List<SwipeGesture> lis = kvp.Value;
-					
-					SwipeGesture a = lis[0];
-					SwipeGesture b = lis[lis.Count - 1];
-					
-					float x_dist = Math.Abs(a.Position.x-b.Position.x);
-					float y_dist = Math.Abs(a.Position.y-b.Position.y);
-					float z_dist = Math.Abs(a.Position.z-b.Position.z);
-					
-					Vector pn = a.Hands.Rightmost.PalmNormal;
-					// Debug.Log(pn);
-					
-					//"STOP" signal
-					if(z_dist>y_dist && z_dist>x_dist && pn.z < -0.5f && pn.x > -0.5f) {
-						if(a.Direction.z > 0)
-							continue;
-						
-						//DO STOP HERE
-						
-						Log("Command STOP! " + x_dist + " " + z_dist + " " + pn.x + " " + pn.z);
-						ResetConsecutive();
-						break;
-					}
-					//"GO" signal
-					else if(Math.Abs(a.Position.x - b.Position.x)>5f) {
-						if(a.Direction.x > 0)
-							continue;
-						
-						c_start = frame.Timestamp/1000000;
-						c_count++;
-						
-						Log("Command go buffering at " + c_count + " of " + GO_TARGET_COUNT);
-						if(c_count >= GO_TARGET_COUNT) {
-							//DO GO HERE
-							
-							Log("Command GO!");
-							ResetConsecutive();
-						}
-						
-						break;
-					}
-					
-				}
-				
-				ResetTimeFrame();
-			}
-			
-			if(c_elapsed>2f) {
-				ResetConsecutive();
-			}
-		}
 	}
 	
-	private void OnHandFound(Hand h) {
+	private void OnHandFound(Hand h)
+	{
 		Messenger.Broadcast<int>(SIG.HANDFOUND.ToString(), h.Id); //broadcast new hand ID to registered listeners
 	}
- 	
-	private void OnHandUpdated(Hand h) {
+    	  	
+	private void OnHandUpdated(Hand h)
+	{
 		bool undeterminedHand = true;
-		
-		Frame frame = controller.Frame();
-		GestureList gestures = frame.Gestures ();
-		
-		for (int i = 0; i < gestures.Count; i++) {
-			Gesture gesture = gestures[i];
-			
-			if(gesture.Type==Gesture.GestureType.TYPE_SWIPE) {
-				SwipeGesture swipe = new SwipeGesture (gesture);
-				
-				if(!Recent.ContainsKey(swipe.Id)) {
-					Recent.Add(swipe.Id, new List<SwipeGesture>());
-					tf_start = frame.Timestamp/1000000;
-				}
-				
-				Recent[swipe.Id].Add(swipe);
-			}
-			
-			if(i==gestures.Count-1)
-				tf_start = frame.Timestamp/1000000;
-		}
-		
+
 		for (int i = 0; i < 2; i++)
 		{
 			if ((unityHands[i]).hand != null && unityHands[i].hand.Id == h.Id && unityHands[i].isHandDetermined)
@@ -279,18 +167,8 @@ public class LeapHandController : MonoBehaviour
 		unityHands[1].hand = rightMost;
 	}
 	
-	private void ResetConsecutive() {
-		c_count = 0;
-		c_start = -1;
-		c_elapsed = 0;
-	}
+		
 
-	private void ResetTimeFrame() {
-		tf_start = -1;
-		tf_elapsed = 0;
-		Recent.Clear();
-	}
-	
 	private void OnDestroy()
 	{
 		//necessary to clean delegate assignment between scenes
@@ -298,9 +176,5 @@ public class LeapHandController : MonoBehaviour
 		LeapInputEx.HandUpdated -= OnHandUpdated;
 		LeapInputEx.HandLost -= OnHandLost;
 	}
-	
-	private void Log(string text) {
-		if (debugMode)
-			Debug.Log(text);
-	}
+
 }

@@ -61,6 +61,7 @@
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Hand\RiggedHandTransforms.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Hand\UnityHand.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Hand\UnityHandSettings.cs" />
+     <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\GoStopHandController.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapUnityExtensions.cs" />
@@ -111,7 +112,7 @@
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>D:/GitHub/ADMUTrafficSim/Nina/Assets/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>C:/Users/Rico/Documents/GitHub/ADMUTrafficSim/Nina/Assets/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
