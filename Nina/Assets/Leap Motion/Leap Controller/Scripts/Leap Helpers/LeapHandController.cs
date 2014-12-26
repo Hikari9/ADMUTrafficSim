@@ -14,6 +14,14 @@ public class LeapHandController : MonoBehaviour
 	public UnityHandSettings handSettings;
 	public Controller controller;
 	
+	// for debugging
+	public bool debugMode = false;
+	
+	// constants
+	public const int GO_TARGET_COUNT = 3;
+	
+	// members
+	
 	private Dictionary<int, List<SwipeGesture> > Recent;
 	private long tf_elapsed;
 	private long tf_start = -1;
@@ -59,6 +67,7 @@ public class LeapHandController : MonoBehaviour
 		Frame frame = controller.Frame();
 		
 		if(tf_start!=-1) {
+			Log ("Entered check");
 			tf_elapsed = frame.Timestamp/1000000 - tf_start;
 			
 			if(c_start!=-1)
@@ -66,20 +75,11 @@ public class LeapHandController : MonoBehaviour
 			
 			if(tf_elapsed>0 && Recent.Count>0) {
 				
-				outer: foreach(KeyValuePair<int, List<SwipeGesture>> kvp in Recent) {
+				foreach(KeyValuePair<int, List<SwipeGesture>> kvp in Recent) {
 					List<SwipeGesture> lis = kvp.Value;
 					
-					int i = 0;
-					SwipeGesture a = null;
-					SwipeGesture b = null;
-					// Debug.Log(lis.Count);
-					foreach(SwipeGesture sg in lis) {
-						if(i==0)
-							a = sg;
-						if(i==lis.Count-1)
-							b = sg;
-						i++;
-					}
+					SwipeGesture a = lis[0];
+					SwipeGesture b = lis[lis.Count - 1];
 					
 					float x_dist = Math.Abs(a.Position.x-b.Position.x);
 					float y_dist = Math.Abs(a.Position.y-b.Position.y);
@@ -95,7 +95,7 @@ public class LeapHandController : MonoBehaviour
 						
 						//DO STOP HERE
 						
-						// Debug.Log("STOP! " + x_dist + " " + z_dist + " " + pn.x + " " + pn.z);
+						Log("Command STOP! " + x_dist + " " + z_dist + " " + pn.x + " " + pn.z);
 						ResetConsecutive();
 						break;
 					}
@@ -107,11 +107,11 @@ public class LeapHandController : MonoBehaviour
 						c_start = frame.Timestamp/1000000;
 						c_count++;
 						
-						// Debug.Log("valid " + c_count);
-						if(c_count==3) {
+						Log("Command go buffering at " + c_count + " of " + GO_TARGET_COUNT);
+						if(c_count >= GO_TARGET_COUNT) {
 							//DO GO HERE
 							
-							// Debug.Log("GO!");
+							Log("Command GO!");
 							ResetConsecutive();
 						}
 						
@@ -297,5 +297,10 @@ public class LeapHandController : MonoBehaviour
 		LeapInputEx.HandFound -= OnHandFound;
 		LeapInputEx.HandUpdated -= OnHandUpdated;
 		LeapInputEx.HandLost -= OnHandLost;
+	}
+	
+	private void Log(string text) {
+		if (debugMode)
+			Debug.Log(text);
 	}
 }
