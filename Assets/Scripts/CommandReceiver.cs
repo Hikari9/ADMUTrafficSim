@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[ExecuteInEditMode]
 public class CommandReceiver : MonoBehaviour {
 
 	public string spawnNorth = "up";
@@ -28,8 +27,6 @@ public class CommandReceiver : MonoBehaviour {
 				CarSpawner.spawnEast();
 			if (Input.GetKey(spawnWest))
 				CarSpawner.spawnWest();
-
-			
 		}
 		catch {
 			Debug.Log ("Exception thrown.");

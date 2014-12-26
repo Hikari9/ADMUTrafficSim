@@ -9,7 +9,7 @@ public class Glow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		originalColor = targetColor = renderer.sharedMaterial.color;
+		originalColor = targetColor = this.gameObject.renderer.material.color;
 	}
 	
 	// Update is called once per frame
@@ -25,10 +25,10 @@ public class Glow : MonoBehaviour {
 			}
 		}
 
-		Color currentColor = renderer.sharedMaterial.color;
+		Color currentColor = this.gameObject.renderer.material.color;
 		// Color deltaColor = new Color (targetColor.r - currentColor.r, targetColor.g - currentColor.g, targetColor.b - currentColor.b, targetColor.a - currentColor.a);            targetColor.a - currentColor.a);
 		Color deltaColor = targetColor - currentColor;
-		renderer.sharedMaterial.color += deltaColor * Time.smoothDeltaTime * colorFadeSpeed;
+		this.gameObject.renderer.material.color += deltaColor * Time.smoothDeltaTime * colorFadeSpeed;
 	}
 
 	public void setColor(Color color) {
