@@ -31,9 +31,18 @@ public class CarSpawner : MonoBehaviour {
 		car.transform.localPosition = new Vector3(DEFAULT_NORTH_POSITION.x, 0, DEFAULT_NORTH_POSITION.y);
 		car.transform.localRotation = new Quaternion (-0.7f, 0, 0.7f, 0);
 		parent.transform.Rotate (new Vector3 (0, degrees, 0));
+		
+		GameObject road = Command.GetRoadFromAngle (degrees);
+		if (StopCommand.Roads.Contains (road)) {
+			car.GetComponent<CarMovement> ().movement = CarMovement.STOP;
+		}
+		else if (GoCommand.Roads.Contains (road)) {
+			car.GetComponent<CarMovement> ().movement = CarMovement.GO;
+		}
 	}
 
 	public void DestroyCar(GameObject car) {
+		car.tag = "Untagged";
 		if (car.transform.parent) {
 			// Debug.Log ("Destroying parent.");
 			Destroy (car.transform.parent.gameObject);

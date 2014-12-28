@@ -2,22 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class StopCommand : Command {
-
+public class GoCommand : Command {
 	public static HashSet<GameObject> Roads = new HashSet<GameObject>();
-
+	
 	public override void PerformCommand() {
 		base.PerformCommand ();
 		GameObject currentRoad = GetRoadFromAngle (this.transform.rotation.eulerAngles.y);
-		GoCommand.Roads.Remove (currentRoad);
+		StopCommand.Roads.Remove (currentRoad);
 		if (Roads.Contains (currentRoad))
 			return;
 		Roads.Add (currentRoad);
 		GameObject[] cars = GameObject.FindGameObjectsWithTag ("car");
 		// code to stop all cars, but very slow
 		foreach (GameObject car in cars) {
-			if (car.transform.localPosition.z > 10 && GetRoadFromAngle (car.transform.parent.rotation.eulerAngles.y) == currentRoad)
-				car.GetComponent<CarMovement> ().movement = CarMovement.STOP;
+			if (GetRoadFromAngle (car.transform.parent.rotation.eulerAngles.y) == currentRoad)
+				car.GetComponent<CarMovement> ().movement = CarMovement.GO;
 		}
 		/*
 		// just stop the leading car and all's fine
@@ -32,14 +31,13 @@ public class StopCommand : Command {
 			leading.GetComponent<CarMovement> ().movement = CarMovement.STOP;
 		*/
 	}
-
+	
 	// Use this for initialization
 	void Start () {
-		commandColor = Color.red;
+		commandColor = Color.green;
 	}
 	void Update() {
-		if (Input.GetKeyDown (KeyCode.R))
+		if (Input.GetKeyDown (KeyCode.G))
 			PerformCommand();
 	}
-
 }
