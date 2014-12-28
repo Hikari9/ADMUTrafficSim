@@ -115,6 +115,7 @@
      <Compile Include="Assets\Scripts\CarMovement.cs" />
      <Compile Include="Assets\Scripts\CarSpawner.cs" />
      <Compile Include="Assets\Scripts\CommandReceiver.cs" />
+     <Compile Include="Assets\Scripts\GameLoader.cs" />
      <Compile Include="Assets\Scripts\Glow.cs" />
      <Compile Include="Assets\Scripts\GoStopHandController.cs" />
      <Compile Include="Assets\Scripts\KeyLook.cs" />
