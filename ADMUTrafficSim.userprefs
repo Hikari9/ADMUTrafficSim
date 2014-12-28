@@ -1,10 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RandomBuildingSpawner.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CarSpawner.cs">
     <Files>
       <File FileName="ADMUTrafficSim.sln" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\RandomBuildingSpawner.cs" Line="85" Column="24" />
+      <File FileName="Assets\Scripts\RandomBuildingSpawner.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GameLoader.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TrafficSimulator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CarSpawner.cs" Line="9" Column="69" />
+      <File FileName="Assets\Scripts\CommandReceiver.cs" Line="14" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

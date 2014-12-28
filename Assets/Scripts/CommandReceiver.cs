@@ -19,13 +19,13 @@ public class CommandReceiver : MonoBehaviour {
 	void Update () {
 		CarSpawner.prefab = prefab;
 		try {
-			if (Input.GetKey (spawnNorth))
+			if (Input.GetKeyDown (spawnNorth))
 				CarSpawner.spawnNorth();
-			if (Input.GetKey (spawnSouth))
+			if (Input.GetKeyDown (spawnSouth))
 				CarSpawner.spawnSouth();
-			if (Input.GetKey (spawnEast))
+			if (Input.GetKeyDown (spawnEast))
 				CarSpawner.spawnEast();
-			if (Input.GetKey(spawnWest))
+			if (Input.GetKeyDown(spawnWest))
 				CarSpawner.spawnWest();
 		}
 		catch {
