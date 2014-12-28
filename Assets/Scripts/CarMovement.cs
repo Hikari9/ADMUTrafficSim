@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[ExecuteInEditMode]
 public class CarMovement : MonoBehaviour {
 
-	Vector3 acceleration = new Vector3 (20f, 0f, 0f);
-	float targetVelocity = 15f;
-
+	float acceleration = 5f;
+	Vector3 targetVelocity = new Vector3 (40f, 0f, 0f);
 	// Use this for initialization
 	void Start () {
 		// Debug.Log (this.transform.transform.rotation);
@@ -19,11 +17,12 @@ public class CarMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Rigidbody rb = transform.rigidbody;
-		if (rb.velocity.magnitude < this.targetVelocity) {
-			rb.AddRelativeForce (this.acceleration);
-		}
-		if (OutOfBounds (this.gameObject.transform.position)) {
+		Vector3 localVelocity = transform.InverseTransformDirection (rigidbody.velocity);
+		Vector3 need = targetVelocity - localVelocity;
+		Vector3 addend = need * this.acceleration * Time.deltaTime;
+		rigidbody.velocity += transform.TransformDirection (addend);
+		// Debug.Log (rigidbody.velocity);
+		if (OutOfBounds (this.gameObject.transform.position) && GetComponent<CarSpawner>()) {
 			GetComponent<CarSpawner>().DestroyCar(this.gameObject);
 		}
 	}

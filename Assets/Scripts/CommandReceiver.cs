@@ -8,17 +8,15 @@ public class CommandReceiver : MonoBehaviour {
 	public string spawnSouth = "down";
 	public string spawnWest = "left";
 
-	public GameObject prefab = null;
+	CarSpawner spawn = null;
 
 	// Use this for initialization
 	void Start () {
-	
+		spawn = GetComponent<CarSpawner>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		CarSpawner spawn = GetComponent<CarSpawner> ();
-		spawn.prefab = prefab;
 		try {
 			if (Input.GetKeyDown (spawnNorth))
 				spawn.spawnNorth();
