@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class RandomBuildingSpawner : MonoBehaviour {
 
 	public bool enable = false;
+	bool prevState = false;
 
 	public float roadRadius = 5f;
 
@@ -25,8 +26,8 @@ public class RandomBuildingSpawner : MonoBehaviour {
 	[Header("Spawn Properties")]
 	public int spawnSize = 100;
 	public float surfaceLevel = 0;
-
-	static object prev = null;
+	public Color color = Color.magenta;
+	public bool randomColors = false;
 
 
 	[Range(0, 1)]
@@ -39,12 +40,15 @@ public class RandomBuildingSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!enable)
-			Building.DestroyAll ();
+		if (enable != prevState) {
+			Spawn ();
+			prevState = enable;
+		}
 	}
 	
 	void Spawn() {
 		Building.DestroyAll ();
+		if (enable)
 		for (int i = -1; i < 2; i+=2) {
 			for (int j = -1; j < 2; j+=2) {
 				MakeQuadrant(roadRadius * i, roadRadius * j, (length - roadRadius) * i, (width - roadRadius) * j);
@@ -74,7 +78,11 @@ public class RandomBuildingSpawner : MonoBehaviour {
 				l = x2 - rx;
 			if (ry + w > y2)
 				w = y2 - ry;
-			new Building(rx, surfaceLevel, ry, l, h, w);
+			Building b = new Building(rx, surfaceLevel, ry, l, h, w);
+			if (randomColors)
+				b.setColor (new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f)));
+			else
+				b.setColor (color);
 		}
 	}
 				
@@ -82,6 +90,9 @@ public class RandomBuildingSpawner : MonoBehaviour {
 	public class Building {
 		Vector3 position, direction;
 		GameObject o;
+
+		public static Color defaultColor = Color.white;
+
 		public Building(Vector3 position, Vector3 direction) {
 			this.o = GameObject.CreatePrimitive(PrimitiveType.Cube);
 			this.o.name = "Building";
@@ -89,9 +100,17 @@ public class RandomBuildingSpawner : MonoBehaviour {
 			this.o.hideFlags |= HideFlags.HideInHierarchy;
 			this.setPosition(position);
 			this.setDirection(direction);
-			
 			// Debug.Log ("Spawning: " + position + " and " + direction);
 		}
+
+
+
+		public void setColor(Color color) {
+			Material mat = new Material (Shader.Find ("Diffuse"));
+			mat.color = color;
+			this.o.renderer.material = mat;
+		}
+
 		public Building(float x, float y, float z, float dx, float dy, float dz)
 			: this(new Vector3(x, y, z), new Vector3(dx, dy, dz))
 			{}
