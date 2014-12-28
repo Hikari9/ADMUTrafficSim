@@ -121,6 +121,7 @@
      <Compile Include="Assets\Scripts\KeyLook.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\MenuManager.cs" />
+     <Compile Include="Assets\Scripts\RandomBuildingSpawner.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\TrafficSimulator.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />

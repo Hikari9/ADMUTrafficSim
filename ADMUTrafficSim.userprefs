@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLoader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RandomBuildingSpawner.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameLoader.cs" Line="16" Column="9" />
+      <File FileName="Assets\Scripts\GameLoader.cs" Line="16" Column="3" />
+      <File FileName="Assets\Scripts\RandomBuildingSpawner.cs" Line="15" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
