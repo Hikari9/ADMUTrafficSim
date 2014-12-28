@@ -24,7 +24,7 @@ public class CarMovement : MonoBehaviour {
 			rb.AddRelativeForce (this.acceleration);
 		}
 		if (OutOfBounds (this.gameObject.transform.position)) {
-			CarSpawner.DestroyCar(this.gameObject);
+			GetComponent<CarSpawner>().DestroyCar(this.gameObject);
 		}
 	}
 }

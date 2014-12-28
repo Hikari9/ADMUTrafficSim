@@ -17,16 +17,17 @@ public class CommandReceiver : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		CarSpawner.prefab = prefab;
+		CarSpawner spawn = GetComponent<CarSpawner> ();
+		spawn.prefab = prefab;
 		try {
 			if (Input.GetKeyDown (spawnNorth))
-				CarSpawner.spawnNorth();
+				spawn.spawnNorth();
 			if (Input.GetKeyDown (spawnSouth))
-				CarSpawner.spawnSouth();
+				spawn.spawnSouth();
 			if (Input.GetKeyDown (spawnEast))
-				CarSpawner.spawnEast();
+				spawn.spawnEast();
 			if (Input.GetKeyDown(spawnWest))
-				CarSpawner.spawnWest();
+				spawn.spawnWest();
 		}
 		catch {
 			Debug.Log ("Exception thrown.");

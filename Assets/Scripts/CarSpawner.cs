@@ -4,11 +4,10 @@ using System.Collections;
 [ExecuteInEditMode]
 public class CarSpawner : MonoBehaviour {
 
-	public static GameObject prefab;
+	public GameObject prefab;
+	public Vector2 DEFAULT_NORTH_POSITION = new Vector2(-5, 50);
 
-	public static Vector2 DEFAULT_NORTH_POSITION = new Vector2(-5, 50);
-
-	public static void spawn(float degrees) {
+	public void spawn(float degrees) {
 		GameObject parent = new GameObject ();
 		parent.transform.position = Vector3.zero;
 
@@ -20,7 +19,7 @@ public class CarSpawner : MonoBehaviour {
 		parent.transform.Rotate (new Vector3 (0, degrees, 0));
 	}
 
-	public static void DestroyCar(GameObject car) {
+	public void DestroyCar(GameObject car) {
 		if (car.transform.parent) {
 			// Debug.Log ("Destroying parent.");
 			Destroy (car.transform.parent.gameObject);
@@ -39,22 +38,22 @@ public class CarSpawner : MonoBehaviour {
 		}
 	} */
 
-	public static void spawnNorth() {
+	public void spawnNorth() {
 		// spawn (0, 50);
 		spawn (0);
 	}
 
-	public static void spawnEast() {
+	public void spawnEast() {
 		// spawn (50, 0);
 		spawn (90);
 	}
 
-	public static void spawnSouth() {
+	public void spawnSouth() {
 		// spawn (0, -50);
 		spawn (180);
 	}
 
-	public static void spawnWest() {
+	public void spawnWest() {
 		// spawn (-50, 0);
 		spawn (270);
 	}
