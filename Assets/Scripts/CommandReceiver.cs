@@ -12,7 +12,7 @@ public class CommandReceiver : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		spawn = CarSpawner.Main;
+		spawn = GetComponent<CarSpawner> ();
 	}
 	
 	// Update is called once per frame

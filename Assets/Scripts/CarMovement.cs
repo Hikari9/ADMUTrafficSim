@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CarMovement : MonoBehaviour {
 
-	public float acceleration = 5f;
+	public float acceleration = 15f;
 	public Vector3 targetVelocity = new Vector3 (40f, 0f, 0f);
 	Vector3 originalTargetVelocity;
 	// Use this for initialization
@@ -30,24 +30,27 @@ public class CarMovement : MonoBehaviour {
 		}
 	}
 
+	public void OnTriggerEnter(Collider collision) {
+		OnTriggerStay (collision);
+	}
+
 	public void OnTriggerStay(Collider collision) {
 		// slow down car to avoid collision
-		// Debug.Log ("Enter collision with: " + collision);
+		// Debug.Log ("Enter collision: " + this.transform.parent.rotation.eulerAngles.y);
 		Transform car1 = this.transform;
 		Transform car2 = collision.transform;
-		if (Mathf.Abs (Vector3.Dot (car1.position, car2.position)) < 1e-6f) {
-			if (car1.position.sqrMagnitude < car2.position.sqrMagnitude)
-				this.GetComponentInParent<CarMovement> ().targetVelocity = Vector3.zero;
-		}
-		else
-			if (car1.position.sqrMagnitude > car2.position.sqrMagnitude)
-				this.GetComponentInParent<CarMovement>().targetVelocity = Vector3.zero;
+		if (car1.localPosition.z > car2.localPosition.z)
+			this.GetComponent<CarMovement>().targetVelocity = Vector3.zero;
+		else if (car2.rigidbody.IsSleeping())
+			car1.GetComponent<CarMovement> ().targetVelocity = originalTargetVelocity;
+		if (Mathf.Abs (car1.parent.rotation.eulerAngles.y - car2.parent.eulerAngles.y) > 1e-6f && car2.rigidbody.IsSleeping ())
+			car1.GetComponent<CarMovement> ().targetVelocity = originalTargetVelocity;
 	}
 	public void OnTriggerExit(Collider collision) {
 		// Debug.Log ("Exit collision with: " + collision);
 		Transform car1 = this.transform;
 		Transform car2 = collision.transform;
-		car1.GetComponentInParent<CarMovement> ().targetVelocity = car1.GetComponentInParent<CarMovement> ().originalTargetVelocity;
-		car2.GetComponentInParent<CarMovement> ().targetVelocity = car2.GetComponentInParent<CarMovement> ().originalTargetVelocity;
+		car1.GetComponent<CarMovement> ().targetVelocity = car1.GetComponent<CarMovement> ().originalTargetVelocity;
+		car2.GetComponent<CarMovement> ().targetVelocity = car2.GetComponent<CarMovement> ().originalTargetVelocity;
 	}
 }
