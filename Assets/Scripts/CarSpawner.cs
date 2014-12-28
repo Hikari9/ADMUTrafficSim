@@ -20,6 +20,15 @@ public class CarSpawner : MonoBehaviour {
 		parent.transform.Rotate (new Vector3 (0, degrees, 0));
 	}
 
+	public static void DestroyCar(GameObject car) {
+		if (car.transform.parent) {
+			// Debug.Log ("Destroying parent.");
+			Destroy (car.transform.parent.gameObject);
+		}
+		// Debug.Log ("Destroying car object.");
+		Destroy (car);
+	}
+
 	/* old spawn
 	public static void spawn(float north, float east) {
 		if (Time.time - spawnTime > spawnTimeAllowance) {

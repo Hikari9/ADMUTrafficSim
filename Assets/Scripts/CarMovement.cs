@@ -23,7 +23,8 @@ public class CarMovement : MonoBehaviour {
 		if (rb.velocity.magnitude < this.targetVelocity) {
 			rb.AddRelativeForce (this.acceleration);
 		}
-		if (OutOfBounds (this.gameObject.transform.position))
-			Destroy (this.gameObject);
+		if (OutOfBounds (this.gameObject.transform.position)) {
+			CarSpawner.DestroyCar(this.gameObject);
+		}
 	}
 }
