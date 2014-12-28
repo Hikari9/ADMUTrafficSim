@@ -111,6 +111,7 @@
      <Compile Include="Assets\Leap Motion\Scenes Pack\Scripts\Leap Scenes\Weapons\CameraLerp.cs" />
      <Compile Include="Assets\Leap Motion\Scenes Pack\Scripts\Leap Scenes\Weapons\InstantiateObject.cs" />
      <Compile Include="Assets\Leap Motion\Scenes Pack\Scripts\Leap Scenes\Weapons\Projectile.cs" />
+     <Compile Include="Assets\Scripts\AnimatedTransform.cs" />
      <Compile Include="Assets\Scripts\CarMovement.cs" />
      <Compile Include="Assets\Scripts\CarSpawner.cs" />
      <Compile Include="Assets\Scripts\CommandReceiver.cs" />

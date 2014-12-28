@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AnimatedTransform.cs">
     <Files>
-      <File FileName="Assets\Scripts\MenuManager.cs" Line="17" Column="43" />
+      <File FileName="Assets\Scripts\AnimatedTransform.cs" Line="17" Column="37" />
+      <File FileName="Assets\Scripts\MenuManager.cs" Line="10" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
