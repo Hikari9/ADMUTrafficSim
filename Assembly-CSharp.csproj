@@ -114,6 +114,7 @@
      <Compile Include="Assets\Scripts\AnimatedTransform.cs" />
      <Compile Include="Assets\Scripts\CarMovement.cs" />
      <Compile Include="Assets\Scripts\CarSpawner.cs" />
+     <Compile Include="Assets\Scripts\Command.cs" />
      <Compile Include="Assets\Scripts\CommandReceiver.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
      <Compile Include="Assets\Scripts\Glow.cs" />
@@ -123,6 +124,7 @@
      <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\RandomBuildingSpawner.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
+     <Compile Include="Assets\Scripts\StopCommand.cs" />
      <Compile Include="Assets\Scripts\TrafficSimulator.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />

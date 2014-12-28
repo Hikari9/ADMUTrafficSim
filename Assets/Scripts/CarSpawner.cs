@@ -27,6 +27,7 @@ public class CarSpawner : MonoBehaviour {
 
 		GameObject car = (GameObject)Instantiate (cars[Random.Range (0, cars.Length - 1)]);
 		car.transform.SetParent (parent.transform);
+		car.tag = "car";
 		car.transform.localPosition = new Vector3(DEFAULT_NORTH_POSITION.x, 0, DEFAULT_NORTH_POSITION.y);
 		car.transform.localRotation = new Quaternion (-0.7f, 0, 0.7f, 0);
 		parent.transform.Rotate (new Vector3 (0, degrees, 0));

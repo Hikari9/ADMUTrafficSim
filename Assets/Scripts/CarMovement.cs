@@ -3,9 +3,13 @@ using System.Collections;
 
 public class CarMovement : MonoBehaviour {
 
-	public float acceleration = 15f;
-	public Vector3 targetVelocity = new Vector3 (40f, 0f, 0f);
+	public float acceleration = 3f;
+	public Vector3 targetVelocity = new Vector3 (10f, 0f, 0f);
 	Vector3 originalTargetVelocity;
+
+	public const int STOP = 0, GO = 1, NORMAL = -1;
+	public int movement = NORMAL;
+
 	// Use this for initialization
 	void Start () {
 		originalTargetVelocity = targetVelocity;
@@ -19,6 +23,8 @@ public class CarMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (movement == STOP) targetVelocity = Vector3.zero;
+		else if (movement == GO) targetVelocity = originalTargetVelocity;
 		Vector3 localVelocity = transform.InverseTransformDirection (rigidbody.velocity);
 		Vector3 need = targetVelocity - localVelocity;
 		Vector3 addend = need * this.acceleration * Time.deltaTime;
@@ -30,11 +36,13 @@ public class CarMovement : MonoBehaviour {
 		}
 	}
 
+	/*
 	public void OnTriggerEnter(Collider collision) {
 		OnTriggerStay (collision);
-	}
+	}*/
 
 	public void OnTriggerStay(Collider collision) {
+		if (movement != NORMAL) return;
 		// slow down car to avoid collision
 		// Debug.Log ("Enter collision: " + this.transform.parent.rotation.eulerAngles.y);
 		Transform car1 = this.transform;
@@ -42,11 +50,12 @@ public class CarMovement : MonoBehaviour {
 		if (car1.localPosition.z > car2.localPosition.z)
 			this.GetComponent<CarMovement>().targetVelocity = Vector3.zero;
 		else if (car2.rigidbody.IsSleeping())
-			car1.GetComponent<CarMovement> ().targetVelocity = originalTargetVelocity;
+			car1.GetComponent<CarMovement> ().targetVelocity = car1.GetComponent<CarMovement> ().originalTargetVelocity;
 		if (Mathf.Abs (car1.parent.rotation.eulerAngles.y - car2.parent.eulerAngles.y) > 1e-6f && car2.rigidbody.IsSleeping ())
-			car1.GetComponent<CarMovement> ().targetVelocity = originalTargetVelocity;
+			car1.GetComponent<CarMovement> ().targetVelocity = car1.GetComponent<CarMovement> ().originalTargetVelocity;
 	}
 	public void OnTriggerExit(Collider collision) {
+		if (movement != NORMAL) return;
 		// Debug.Log ("Exit collision with: " + collision);
 		Transform car1 = this.transform;
 		Transform car2 = collision.transform;

@@ -1,13 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CarSpawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Command.cs">
     <Files>
-      <File FileName="Assets\Scripts\CommandReceiver.cs" Line="11" Column="26" />
-      <File FileName="Assets\Scripts\RandomBuildingSpawner.cs" Line="136" Column="3" />
-      <File FileName="Assets\Scripts\GameLoader.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\TrafficSimulator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CarSpawner.cs" Line="36" Column="30" />
-      <File FileName="Assets\Scripts\CarMovement.cs" Line="44" Column="40" />
+      <File FileName="Assets\Scripts\CommandReceiver.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\RandomBuildingSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameLoader.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CarSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CarMovement.cs" Line="4" Column="28" />
+      <File FileName="Assets\Scripts\AnimatedTransform.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\StopCommand.cs" Line="4" Column="37" />
+      <File FileName="Assets\Scripts\Command.cs" Line="10" Column="17" />
+      <File FileName="Assets\Scripts\Glow.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
