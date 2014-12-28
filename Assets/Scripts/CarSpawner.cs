@@ -1,9 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[ExecuteInEditMode]
 public class CarSpawner : MonoBehaviour {
+	// Use this for initialization
+	void Start () {
+		Main = this;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 
+	public static CarSpawner Main;
 	public GameObject[] cars;
 	public Vector2 DEFAULT_NORTH_POSITION = new Vector2(-5, 50);
 
@@ -13,6 +22,8 @@ public class CarSpawner : MonoBehaviour {
 		}
 		GameObject parent = new GameObject ();
 		parent.transform.position = Vector3.zero;
+		parent.name = "spawned car";
+		parent.hideFlags |= HideFlags.HideInHierarchy;
 
 		GameObject car = (GameObject)Instantiate (cars[Random.Range (0, cars.Length - 1)]);
 		car.transform.SetParent (parent.transform);
@@ -23,7 +34,7 @@ public class CarSpawner : MonoBehaviour {
 	}
 
 	public void DestroyCar(GameObject car) {
-		if (car.transform.parent.gameObject) {
+		if (car.transform.parent) {
 			// Debug.Log ("Destroying parent.");
 			Destroy (car.transform.parent.gameObject);
 		}
@@ -61,13 +72,4 @@ public class CarSpawner : MonoBehaviour {
 		spawn (270);
 	}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
