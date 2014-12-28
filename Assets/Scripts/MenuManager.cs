@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MenuManager : MonoBehaviour 
 {
-	public Menu CurrentMenu;
+	public Menu CurrentMenu = null;
 
 	public void Start()
 	{
@@ -12,12 +12,16 @@ public class MenuManager : MonoBehaviour
 
 	public void ShowMenu (Menu menu)
 	{
-		if (CurrentMenu != null)
+		if (CurrentMenu != null) {
 			CurrentMenu.IsOpen = false;
+			CurrentMenu.gameObject.SetActive (false);
+		}
 
 		CurrentMenu = menu;
+		CurrentMenu.gameObject.SetActive (true);
 		CurrentMenu.IsOpen = true;
 
 	}
+
 
 }
