@@ -37,6 +37,8 @@ public class CarMovement : MonoBehaviour {
 		Vector3 localVelocity = transform.InverseTransformDirection (rigidbody.velocity);
 		Vector3 need = targetVelocity - localVelocity;
 		Vector3 addend = need * this.acceleration * Time.deltaTime;
+		if (addend.sqrMagnitude > need.sqrMagnitude)
+			addend = need;
 		rigidbody.velocity += transform.TransformDirection (addend);
 		// Debug.Log (rigidbody.velocity);
 		if (OutOfBounds (this.gameObject.transform.position)) {
@@ -56,6 +58,7 @@ public class CarMovement : MonoBehaviour {
 		// Debug.Log ("Enter collision: " + this.transform.parent.rotation.eulerAngles.y);
 		Transform car1 = this.transform;
 		Transform car2 = collision.transform;
+		// if (car1.localPosition - car1.GetComponent<CarMovement>(). > car2.localPosition.sqrMagnitude)
 		if (car1.localPosition.z > car2.localPosition.z)
 			this.GetComponent<CarMovement>().targetVelocity = Vector3.zero;
 		else if (car2.rigidbody.IsSleeping())

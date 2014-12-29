@@ -24,12 +24,12 @@ public class CarSpawner : MonoBehaviour {
 		parent.transform.position = Vector3.zero;
 		parent.name = "spawned car";
 		parent.hideFlags |= HideFlags.HideInHierarchy;
-
-		GameObject car = (GameObject)Instantiate (cars[Random.Range (0, cars.Length - 1)]);
+		int id = Random.Range (0, cars.Length);
+		GameObject car = (GameObject)Instantiate (cars[id]);
 		car.transform.SetParent (parent.transform);
 		car.tag = "car";
-		car.transform.localPosition = new Vector3(DEFAULT_NORTH_POSITION.x, 0, DEFAULT_NORTH_POSITION.y);
-		car.transform.localRotation = new Quaternion (-0.7f, 0, 0.7f, 0);
+		car.transform.localPosition += new Vector3(DEFAULT_NORTH_POSITION.x, 0, DEFAULT_NORTH_POSITION.y);
+		// car.transform.localRotation = new Quaternion (-0.7f, 0, 0.7f, 0);
 		parent.transform.Rotate (new Vector3 (0, degrees, 0));
 		
 		GameObject road = Command.GetRoadFromAngle (degrees);
