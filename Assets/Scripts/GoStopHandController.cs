@@ -30,10 +30,12 @@ public class GoStopHandController : MonoBehaviour {
 	
 	public void ExecuteGo() {
 		// Place code here for when in GO
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GoCommand> ().PerformCommand ();
 	}
 	
 	public void ExecuteStop() {
 		// Place code here for when in STOP
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<StopCommand> ().PerformCommand ();
 	}
 	
 	// use this for initialization
