@@ -31,6 +31,11 @@ public class StopCommand : Command {
 		if (leading)
 			leading.GetComponent<CarMovement> ().movement = CarMovement.STOP;
 		*/
+		// Component[] comp = GetComponentsInChildren<AnimatedTransform>();
+
+		if (GetComponent<GoCommand> ())
+			GetComponent<GoCommand> ().ResetCommand ();
+		this.TransformCommand ();
 	}
 
 	// Use this for initialization

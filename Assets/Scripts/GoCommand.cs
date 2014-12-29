@@ -30,6 +30,10 @@ public class GoCommand : Command {
 		if (leading)
 			leading.GetComponent<CarMovement> ().movement = CarMovement.STOP;
 		*/
+
+		if (GetComponent<StopCommand> ())
+			GetComponent<StopCommand> ().ResetCommand ();
+		this.TransformCommand ();
 	}
 	
 	// Use this for initialization

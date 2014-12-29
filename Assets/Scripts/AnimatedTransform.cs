@@ -7,7 +7,7 @@ public class AnimatedTransform : MonoBehaviour {
 	public float speed = 5f;
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 		direction = Vector3.zero;
 	}
 	

@@ -111,11 +111,13 @@
      <Compile Include="Assets\Leap Motion\Scenes Pack\Scripts\Leap Scenes\Weapons\CameraLerp.cs" />
      <Compile Include="Assets\Leap Motion\Scenes Pack\Scripts\Leap Scenes\Weapons\InstantiateObject.cs" />
      <Compile Include="Assets\Leap Motion\Scenes Pack\Scripts\Leap Scenes\Weapons\Projectile.cs" />
+     <Compile Include="Assets\Scripts\AnimatedTargetedTransform.cs" />
      <Compile Include="Assets\Scripts\AnimatedTransform.cs" />
      <Compile Include="Assets\Scripts\CarMovement.cs" />
      <Compile Include="Assets\Scripts\CarSpawner.cs" />
      <Compile Include="Assets\Scripts\Command.cs" />
      <Compile Include="Assets\Scripts\CommandReceiver.cs" />
+     <Compile Include="Assets\Scripts\CommandTransformer.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
      <Compile Include="Assets\Scripts\Glow.cs" />
      <Compile Include="Assets\Scripts\GoCommand.cs" />
@@ -123,6 +125,7 @@
      <Compile Include="Assets\Scripts\KeyLook.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\MenuManager.cs" />
+     <Compile Include="Assets\Scripts\PositionRotation.cs" />
      <Compile Include="Assets\Scripts\RandomBuildingSpawner.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\StopCommand.cs" />
