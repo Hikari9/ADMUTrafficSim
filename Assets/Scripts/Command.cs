@@ -45,7 +45,7 @@ public class Command : MonoBehaviour {
 	public virtual void PerformCommand() {
 		GameObject officer = GameObject.FindGameObjectWithTag ("GameController");
 		GameObject currentRoad = GetRoadFromAngle (officer.transform.rotation.eulerAngles.y);
-		currentRoad.GetComponent<Glow> ().setColor (commandColor);
+		currentRoad.GetComponent<Glow> ().SetColor (commandColor);
 	}
 	public static GameObject GetRoadFromAngle(float angle) {
 		while (angle < 0) angle += 360;

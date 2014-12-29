@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Glow : MonoBehaviour {
 
-	Color targetColor, originalColor;
+	public Color targetColor, originalColor;
 	public float colorFadeSpeed = 7.5f;
 	public bool testRedGreen = false;
 
@@ -17,11 +17,11 @@ public class Glow : MonoBehaviour {
 
 		if (testRedGreen) {
 			if (Input.GetKey ("g")) {
-					setColor (Color.green);
+				SetColor (Color.green);
 			} else if (Input.GetKey ("r")) {
-					setColor (Color.red);
+				SetColor (Color.red);
 			} else if (Input.GetKey (KeyCode.Space)) {
-					setColor (originalColor);
+				SetColor (originalColor);
 			}
 		}
 
@@ -32,7 +32,7 @@ public class Glow : MonoBehaviour {
 		this.gameObject.renderer.material.color += addend;
 	}
 
-	public void setColor(Color color) {
+	public void SetColor(Color color) {
 		this.targetColor = color;
 	}
 }

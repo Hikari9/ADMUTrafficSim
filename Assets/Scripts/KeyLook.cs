@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-[ExecuteInEditMode]
 public class KeyLook : MonoBehaviour {
 
 	public KeyCode[] leftLook = {KeyCode.A};
@@ -31,11 +30,11 @@ public class KeyLook : MonoBehaviour {
 			hasInput = true;
 				break;
 			}
-		float rot = Time.smoothDeltaTime * rotationAngle * rotationSpeed;
+		float rot = rotationAngle * Mathf.Min (1f, Time.smoothDeltaTime * rotationSpeed);
 		transform.Rotate (0, rot, 0);
 		rotationAngle -= rot;
 		if (hasInput)
 			foreach (var com in GetComponents<Command>())
-					com.ResetCommand ();
+				com.ResetCommand ();
 	}
 }
