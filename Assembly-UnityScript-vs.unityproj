@@ -86,16 +86,16 @@
      <None Include="Assets\EasyRoads3D Free\Shaders\EasyRoads3D-Road-Edit-Mode.shader" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Rico/Documents/GitHub/ADMUTrafficSim/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>D:/GitHub/ADMUTrafficSim/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>C:/Users/Rico/Documents/GitHub/ADMUTrafficSim/Assets/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>D:/GitHub/ADMUTrafficSim/Assets/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
  <Reference Include="EasyRoads3D">
- <HintPath>C:/Users/Rico/Documents/GitHub/ADMUTrafficSim/Assets/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
+ <HintPath>D:/GitHub/ADMUTrafficSim/Assets/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
