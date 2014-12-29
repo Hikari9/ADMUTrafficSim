@@ -41,7 +41,7 @@ public class CarMovement : MonoBehaviour {
 		// Debug.Log (rigidbody.velocity);
 		if (OutOfBounds (this.gameObject.transform.position)) {
 			// Debug.Log ("OUT");
-			CarSpawner.Main.DestroyCar(this.gameObject);
+			GameObject.FindGameObjectWithTag("GameMaster").GetComponent<CarSpawner>().DestroyCar(this.gameObject);
 		}
 	}
 

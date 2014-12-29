@@ -66,7 +66,7 @@ public class GoStopHandController : MonoBehaviour {
 	}
 	
 	private bool CheckStop() {
-		if (controller.Frame ().Hands.Rightmost.PalmVelocity.Magnitude < SLEEP_VELOCITY) {
+		if (controller.Frame ().Hands.Count > 0 && controller.Frame ().Hands.Rightmost.PalmVelocity.Magnitude < SLEEP_VELOCITY) {
 			stopCount++;
 			// Log (controller.Frame ().Hands.Rightmost.PalmNormal);
 		}
