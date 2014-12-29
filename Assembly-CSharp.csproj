@@ -115,6 +115,8 @@
      <Compile Include="Assets\Scripts\CarSpawner.cs" />
      <Compile Include="Assets\Scripts\CommandReceiver.cs" />
      <Compile Include="Assets\Scripts\Glow.cs" />
+     <Compile Include="Assets\Scripts\GoStopHandController.cs" />
+     <Compile Include="Assets\Scripts\HandKeyLook.cs" />
      <Compile Include="Assets\Scripts\KeyLook.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\TrafficSimulator.cs" />
@@ -133,11 +135,11 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="EasyRoads3D">
- <HintPath>C:/Users/Rico/Documents/GitHub/ADMUTrafficSim/Assets/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
- </Reference>
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>C:/Users/Rico/Documents/GitHub/ADMUTrafficSim/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>D:/GitHub/ADMUTrafficSim/Assets/LeapCSharp.NET3.5.dll</HintPath>
+ </Reference>
+ <Reference Include="EasyRoads3D">
+ <HintPath>D:/GitHub/ADMUTrafficSim/Assets/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

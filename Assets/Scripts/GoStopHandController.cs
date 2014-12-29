@@ -51,7 +51,7 @@ public class GoStopHandController : MonoBehaviour {
 	
 	void Update() {
 		if (timeStart >= 0) {
-			Log ("Entered check.");
+			// Log ("Entered check.");
 			timeElapsed = getCurrentTime() - timeStart;
 			
 			if (countStart >= 0)
