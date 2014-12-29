@@ -18,22 +18,24 @@ public class GoCommand : Command {
 
 		GameObject[] cars = GameObject.FindGameObjectsWithTag ("car");
 		// code to stop all cars, but very slow
+		/*
 		foreach (GameObject car in cars) {
 			if (GetRoadFromAngle (car.transform.parent.rotation.eulerAngles.y) == currentRoad)
 				car.GetComponent<CarMovement> ().movement = CarMovement.GO;
 		}
-		/*
+		*/
+
 		// just stop the leading car and all's fine
 		GameObject leading = null;
 		foreach (GameObject car in cars) {
-			if (car.transform.localPosition.z > 15 && GetRoadFromAngle(car.transform.parent.rotation.eulerAngles.y) == currentRoad) {
-				if (leading == null || leading.transform.localPosition.z > car.transform.localPosition.z)
-					leading = car;
+			if (GetRoadFromAngle(car.transform.parent.rotation.eulerAngles.y) == currentRoad) {
+				CarMovement move = car.GetComponent<CarMovement>();
+				if (move.movement == CarMovement.STOP) {
+					move.movement = CarMovement.NORMAL;
+					move.SetToOriginal ();
+				}
 			}
 		}
-		if (leading)
-			leading.GetComponent<CarMovement> ().movement = CarMovement.STOP;
-		*/
 
 		if (GetComponent<StopCommand> ())
 			GetComponent<StopCommand> ().ResetCommand ();

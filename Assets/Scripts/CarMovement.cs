@@ -20,20 +20,11 @@ public class CarMovement : MonoBehaviour {
 
 	public static bool OutOfBounds(Vector3 pos) {
 		// Debug.Log ("Checking bounds + " + pos);
-		return (Mathf.Max (new float[]{Mathf.Abs (pos.x), Mathf.Abs (pos.y), Mathf.Abs (pos.z)}) > 100);
+		return (Mathf.Max (new float[]{Mathf.Abs (pos.x), Mathf.Abs (pos.y), Mathf.Abs (pos.z)}) > GameObject.FindGameObjectWithTag("GameMaster").GetComponent<CarSpawner>().DEFAULT_NORTH_POSITION.magnitude + 10);
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (movement == STOP) {
-			targetVelocity = Vector3.zero;
-		}
-		if (movement != prevMovement) {
-			if (movement == GO) {
-				targetVelocity = originalTargetVelocity;
-			}
-			prevMovement = movement;
-		}
 		Vector3 localVelocity = transform.InverseTransformDirection (rigidbody.velocity);
 		Vector3 need = targetVelocity - localVelocity;
 		Vector3 addend = need * Mathf.Min (1f, Time.deltaTime * acceleration);
@@ -41,8 +32,12 @@ public class CarMovement : MonoBehaviour {
 		// Debug.Log (rigidbody.velocity);
 		if (OutOfBounds (this.gameObject.transform.position)) {
 			// Debug.Log ("OUT");
-			GameObject.FindGameObjectWithTag("GameMaster").GetComponent<CarSpawner>().DestroyCar(this.gameObject);
+			GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<CarSpawner> ().DestroyCar (this.gameObject);
 		}
+	}
+
+	public void SetToOriginal() {
+		targetVelocity = originalTargetVelocity;
 	}
 
 	/*
@@ -51,25 +46,24 @@ public class CarMovement : MonoBehaviour {
 	}*/
 
 	public void OnTriggerStay(Collider collision) {
-		if (movement != NORMAL) return;
+		if (movement == STOP) return;
 		// slow down car to avoid collision
 		// Debug.Log ("Enter collision: " + this.transform.parent.rotation.eulerAngles.y);
 		Transform car1 = this.transform;
 		Transform car2 = collision.transform;
 		// if (car1.localPosition - car1.GetComponent<CarMovement>(). > car2.localPosition.sqrMagnitude)
-		if (car1.localPosition.z > car2.localPosition.z)
+		if (car1.localPosition.z >= car2.localPosition.z)
 			this.GetComponent<CarMovement>().targetVelocity = Vector3.zero;
-		else if (car2.rigidbody.IsSleeping())
-			car1.GetComponent<CarMovement> ().targetVelocity = car1.GetComponent<CarMovement> ().originalTargetVelocity;
-		if (Mathf.Abs (car1.parent.rotation.eulerAngles.y - car2.parent.eulerAngles.y) > 1e-6f && car2.rigidbody.IsSleeping ())
+		else if (Mathf.Abs (car1.parent.rotation.eulerAngles.y - car2.parent.eulerAngles.y) > 1e-6f && car2.rigidbody.IsSleeping ())
 			car1.GetComponent<CarMovement> ().targetVelocity = car1.GetComponent<CarMovement> ().originalTargetVelocity;
 	}
 	public void OnTriggerExit(Collider collision) {
-		if (movement != NORMAL) return;
 		// Debug.Log ("Exit collision with: " + collision);
 		Transform car1 = this.transform;
 		Transform car2 = collision.transform;
-		car1.GetComponent<CarMovement> ().targetVelocity = car1.GetComponent<CarMovement> ().originalTargetVelocity;
-		car2.GetComponent<CarMovement> ().targetVelocity = car2.GetComponent<CarMovement> ().originalTargetVelocity;
+		if (car1.GetComponent<CarMovement>().movement != CarMovement.STOP)
+			car1.GetComponent<CarMovement> ().targetVelocity = car1.GetComponent<CarMovement> ().originalTargetVelocity;
+		if (car2.GetComponent<CarMovement>().movement != CarMovement.STOP)
+			car2.GetComponent<CarMovement> ().targetVelocity = car2.GetComponent<CarMovement> ().originalTargetVelocity;
 	}
 }
