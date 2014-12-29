@@ -36,9 +36,7 @@ public class CarMovement : MonoBehaviour {
 		}
 		Vector3 localVelocity = transform.InverseTransformDirection (rigidbody.velocity);
 		Vector3 need = targetVelocity - localVelocity;
-		Vector3 addend = need * this.acceleration * Time.deltaTime;
-		if (addend.sqrMagnitude > need.sqrMagnitude)
-			addend = need;
+		Vector3 addend = need * Mathf.Min (1f, Time.deltaTime * acceleration);
 		rigidbody.velocity += transform.TransformDirection (addend);
 		// Debug.Log (rigidbody.velocity);
 		if (OutOfBounds (this.gameObject.transform.position)) {

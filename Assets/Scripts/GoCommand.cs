@@ -41,7 +41,7 @@ public class GoCommand : Command {
 		commandColor = Color.green;
 	}
 	void Update() {
-		if (Input.GetKeyDown (KeyCode.G))
-			PerformCommand();
+	//	if (Input.GetKeyDown (KeyCode.G))
+	//		PerformCommand();
 	}
 }

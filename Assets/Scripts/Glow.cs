@@ -27,8 +27,9 @@ public class Glow : MonoBehaviour {
 
 		Color currentColor = this.gameObject.renderer.material.color;
 		// Color deltaColor = new Color (targetColor.r - currentColor.r, targetColor.g - currentColor.g, targetColor.b - currentColor.b, targetColor.a - currentColor.a);            targetColor.a - currentColor.a);
-		Color deltaColor = targetColor - currentColor;
-		this.gameObject.renderer.material.color += deltaColor * Time.smoothDeltaTime * colorFadeSpeed;
+		Color need = targetColor - currentColor;
+		Color addend = need * Mathf.Min (1f, Time.deltaTime * colorFadeSpeed);
+		this.gameObject.renderer.material.color += addend;
 	}
 
 	public void setColor(Color color) {

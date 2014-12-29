@@ -43,8 +43,8 @@ public class StopCommand : Command {
 		commandColor = Color.red;
 	}
 	void Update() {
-		if (Input.GetKeyDown (KeyCode.R))
-			PerformCommand();
+		// if (Input.GetKeyDown (KeyCode.R))
+		//	PerformCommand();
 	}
 
 }

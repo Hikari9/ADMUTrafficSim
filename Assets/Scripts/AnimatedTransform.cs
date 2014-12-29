@@ -13,7 +13,7 @@ public class AnimatedTransform : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 addend = Time.deltaTime * direction * speed;
+		Vector3 addend = direction * Mathf.Min (1f, Time.deltaTime * speed);
 		this.transform.position += addend;
 		direction -= addend;
 	}

@@ -20,9 +20,7 @@ public class AnimatedTargetedTransform : MonoBehaviour {
 		}
 		{
 			Vector3 need = targetPosition - transform.localPosition;
-			Vector3 addend = Time.deltaTime * need * speed;
-			if (addend.sqrMagnitude > need.sqrMagnitude)
-				addend = need;
+			Vector3 addend = need * Mathf.Min (1f, Time.deltaTime * speed);
 			transform.localPosition += addend;
 		}
 	}
