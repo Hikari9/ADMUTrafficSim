@@ -18,18 +18,24 @@ public class KeyLook : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		bool hasInput = false;
 		foreach (KeyCode key in leftLook)
 			if (Input.GetKeyDown (key)) {
 				rotationAngle -= 90;
+				hasInput = true;
 				break;
 			}
 		foreach (KeyCode key in rightLook)
 			if (Input.GetKeyDown (key)) {
 				rotationAngle += 90;
+			hasInput = true;
 				break;
 			}
 		float rot = Time.smoothDeltaTime * rotationAngle * rotationSpeed;
 		transform.Rotate (0, rot, 0);
 		rotationAngle -= rot;
+		if (hasInput)
+			foreach (var com in GetComponents<Command>())
+					com.ResetCommand ();
 	}
 }

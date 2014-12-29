@@ -31,9 +31,7 @@ public class CommandTransformer : MonoBehaviour {
 
 	void ListTransformers(Command command, GameObject prefab) {
 		if (command && prefab) {
-			foreach (Transform child in transform) {
-				dfs(child, command, prefab);
-			}
+			dfs (transform.FindChild ("Armature"), command, prefab);
 		}
 	}
 }
