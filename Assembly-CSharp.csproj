@@ -50,6 +50,7 @@
      <Compile Include="Assets\EasyRoads3D Free\scripts\MarkerScript.cs" />
      <Compile Include="Assets\EasyRoads3D Free\scripts\RoadObjectScript.cs" />
      <Compile Include="Assets\EasyRoads3D Free\scripts\SurfaceScript.cs" />
+     <Compile Include="Assets\EscButton.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Hand Types\FingerLineRender.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Hand Types\HandModel.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Hand Types\HandTypeBase.cs" />
