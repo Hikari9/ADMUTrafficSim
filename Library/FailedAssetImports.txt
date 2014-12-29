@@ -1,0 +1,2 @@
+Assets/EasyRoads3D Free/Textures/box.png
+Assets/EasyRoads3D Free/images/vertices_seq_1.jpg
