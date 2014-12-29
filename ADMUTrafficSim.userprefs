@@ -1,9 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CommandReceiver.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\StopCommand.cs">
     <Files>
-      <File FileName="Assets\Scripts\Glow.cs" Line="25" Column="5" />
-      <File FileName="Assets\Scripts\CommandReceiver.cs" Line="36" Column="1" />
+      <File FileName="Assets\Scripts\StopCommand.cs" Line="15" Column="27" />
+      <File FileName="Assets\Scripts\Command.cs" Line="5" Column="45" />
+      <File FileName="Assets\Scripts\CarSpawner.cs" Line="36" Column="1" />
+      <File FileName="Assets\Scripts\GoCommand.cs" Line="11" Column="42" />
+      <File FileName="Assets\Scripts\CarMovement.cs" Line="35" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
