@@ -66,14 +66,14 @@
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
- <Reference Include="LeapCSharp.NET3.5">
- <HintPath>D:/GitHub/ADMUTrafficSim/Assets/LeapCSharp.NET3.5.dll</HintPath>
- </Reference>
  <Reference Include="EasyRoads3DEditor">
- <HintPath>D:/GitHub/ADMUTrafficSim/Assets/EasyRoads3D Free/Editor/EasyRoads3DEditor.dll</HintPath>
+ <HintPath>C:/Users/Rico/Documents/GitHub/ADMUTrafficSim/Assets/EasyRoads3D Free/Editor/EasyRoads3DEditor.dll</HintPath>
  </Reference>
  <Reference Include="EasyRoads3D">
- <HintPath>D:/GitHub/ADMUTrafficSim/Assets/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
+ <HintPath>C:/Users/Rico/Documents/GitHub/ADMUTrafficSim/Assets/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
+ </Reference>
+ <Reference Include="LeapCSharp.NET3.5">
+ <HintPath>C:/Users/Rico/Documents/GitHub/ADMUTrafficSim/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
