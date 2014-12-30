@@ -22,69 +22,7 @@ Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Manag
 Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\LeapCSharp.NET3.5.dll into Unity Child Domain
 Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll (this message is harmless)
 Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll into Unity Child Domain
-- Completed reload, in  0.078 seconds
-desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
-<RI> Initializing input.
-XInput1_3.dll not found.
-<RI> Input initialized.
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\System.dll (this message is harmless)
-Initialize engine version: 4.6.0f3 (30840d631a27)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce 820M   (ID=0x1140)
-    Vendor:   NVIDIA
-    VRAM:     1994 MB
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\LeapCSharp.NET3.5.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\LeapCSharp.NET3.5.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll into Unity Child Domain
-- Completed reload, in  0.072 seconds
-desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
-<RI> Initializing input.
-XInput1_3.dll not found.
-<RI> Input initialized.
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\System.dll (this message is harmless)
-Initialize engine version: 4.6.0f3 (30840d631a27)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce 820M   (ID=0x1140)
-    Vendor:   NVIDIA
-    VRAM:     1994 MB
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\LeapCSharp.NET3.5.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\LeapCSharp.NET3.5.dll into Unity Child Domain
-Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll (this message is harmless)
-Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll into Unity Child Domain
-- Completed reload, in  0.064 seconds
+- Completed reload, in  0.105 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found.
@@ -113,20 +51,314 @@ UnityEngine.EventSystems.EventSystem:Update() (at C:\BuildAgent\work\d63dfc63851
 
 WARNING: Shader Unsupported: 'Hidden/Nature/Tree Creator Leaves Optimized' - Pass '' shader state not supported
 WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
-UnloadTime: 6.119843 ms
+UnloadTime: 6.176070 ms
 System memory in use before: 30.9 MB.
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 System memory in use after: 28.5 MB.
 
 Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 3023.
-Total: 2.482476 ms (FindLiveObjects: 0.218215 ms CreateObjectMapping: 0.053995 ms MarkObjects: 0.442231 ms  DeleteObjects: 0.924625 ms)
+Total: 2.987629 ms (FindLiveObjects: 0.248560 ms CreateObjectMapping: 0.058904 ms MarkObjects: 0.629209 ms  DeleteObjects: 1.132130 ms)
 
 WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
-UnloadTime: 7.977127 ms
+UnloadTime: 6.977085 ms
 System memory in use before: 30.7 MB.
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 System memory in use after: 19.1 MB.
 
 Unloading 1241 unused Assets to reduce memory usage. Loaded Objects now: 700.
-Total: 8.852220 ms (FindLiveObjects: 0.071845 ms CreateObjectMapping: 0.129411 ms MarkObjects: 0.365030 ms  DeleteObjects: 7.642887 ms)
+Total: 8.749582 ms (FindLiveObjects: 0.087910 ms CreateObjectMapping: 0.115131 ms MarkObjects: 0.354767 ms  DeleteObjects: 7.567025 ms)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Command.GetRoadFromAngle (Single angle) [0x00033] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:89 
+  at Command.PerformCommand () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\Command.cs:54 
+  at GoCommand.PerformCommand () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoCommand.cs:9 
+  at GoStopHandController.ExecuteGo () [0x0000b] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:98 
+  at GoStopHandController.OnHandUpdated (Leap.Hand h) [0x00027] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GoStopHandController.cs:59 
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at (wrapper delegate-invoke) System.Action`1<Leap.Hand>:invoke_void__this___Hand (Leap.Hand)
+  at LeapInputEx.DispatchUpdatedEvents (Leap.Frame newFrame, Leap.Frame oldFrame) [0x0003e] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:142 
+  at LeapInputEx.Update () [0x000a6] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapInputEx.cs:80 
+  at LeapHandController.Update () [0x00000] in C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Leap Motion\Leap Controller\Scripts\Leap Helpers\LeapHandController.cs:36 
+ 
+(Filename: C Line: 0)
 
