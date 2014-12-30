@@ -4,7 +4,8 @@ using System.Collections;
 public class TrafficSimulator : MonoBehaviour {
 
 	int spawns;
-	public float spawnTimer = 1f;
+	public float minSpawnTimer = 1f;
+	public float maxSpawnTimer = 2f;
 
 	// Use this for initialization
 	void Start () {
@@ -29,7 +30,7 @@ public class TrafficSimulator : MonoBehaviour {
 				x.SpawnNorth ();
 			else
 				x.SpawnWest ();
-			yield return new WaitForSeconds(spawnTimer);
+			yield return new WaitForSeconds(Random.Range (minSpawnTimer, maxSpawnTimer));
 		}
 	}
 }

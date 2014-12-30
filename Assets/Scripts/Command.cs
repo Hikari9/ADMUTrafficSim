@@ -8,7 +8,7 @@ public class Command : MonoBehaviour {
 	public static CarSpawner GetCarSpawner() {
 		if (carspawner == null)
 			carspawner = GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<CarSpawner> ();
-		Debug.Log (carspawner);
+		// Debug.Log (carspawner);
 		return carspawner;
 	}
 
@@ -54,6 +54,34 @@ public class Command : MonoBehaviour {
 		GameObject currentRoad = GetRoadFromAngle (officer.transform.rotation.eulerAngles.y);
 		currentRoad.GetComponent<Glow> ().SetColor (commandColor);
 	}
+	
+	public HashSet<GameObject> Roads = new HashSet<GameObject>();
+	protected HashSet<GameObject> current = new HashSet<GameObject>();
+
+	public void DeliverCarMovement(int movement) {
+		HashSet<GameObject> next = new HashSet<GameObject> ();
+		HashSet<GameObject> change = new HashSet<GameObject> ();
+		foreach (GameObject road in Roads) {
+			GameObject head = GetCarSpawner().GetRoadHead (road);
+			if (head) {
+				if (current.Remove (head))
+					next.Add (head);
+				else
+					change.Add (head);
+			}
+			//head.GetComponent<CarMovement>().movement = CarMovement.GO;
+		}
+		foreach (var car in current)
+			car.GetComponent<CarMovement>().movement = CarMovement.NORMAL;
+
+		foreach (var car in change)
+			car.GetComponent<CarMovement> ().movement = movement;
+
+		current = next;
+		foreach (var car in change)
+			current.Add (car);
+	}
+
 	public static GameObject GetRoadFromAngle(float angle) {
 		while (angle < 0) angle += 360;
 		GameObject[] roads = GameObject.FindGameObjectsWithTag ("road");
@@ -62,4 +90,5 @@ public class Command : MonoBehaviour {
 	}
 	void Update() {
 	}
+
 }

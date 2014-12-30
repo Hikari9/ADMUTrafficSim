@@ -17,47 +17,66 @@ public class CarSpawner : MonoBehaviour {
 	public GameObject[] cars;
 	public Vector2 DEFAULT_NORTH_POSITION = new Vector2(-5, 50);
 
-	Dictionary<GameObject, Queue<GameObject>> Roads = new Dictionary<GameObject, Queue<GameObject>> ();
+	Dictionary<GameObject, LinkedList<GameObject>> Roads = new Dictionary<GameObject, LinkedList<GameObject>> ();
 
-	public Queue<GameObject> GetRoadQueue(GameObject road) {
+	public LinkedList<GameObject> GetRoadQueue(GameObject road) {
 		if (!Roads.ContainsKey (road))
-			Roads.Add (road, new Queue<GameObject> ());
-		Queue<GameObject> Q = Roads [road];
+			Roads.Add (road, new LinkedList<GameObject> ());
+		var Q = Roads [road];
 		while (Q.Count > 0) {
-			GameObject car = Q.Peek ();
-			if (car == null || (car.transform.localPosition.z < 15 && car.GetComponent<CarMovement>().movement != CarMovement.STOP))
-				Q.Dequeue ();
+			GameObject car = Q.First.Value;
+			if (car == null)
+				// car destroyed
+				Q.RemoveFirst ();
+			else if (car.transform.localPosition.z < 10 && car.GetComponent<CarMovement>().movement != CarMovement.STOP) {
+				car.GetComponent<CarMovement>().movement = CarMovement.NORMAL;
+				Q.RemoveFirst ();
+			}
 			else break;
 		}
 		return Q;
 	}
 
 	public void AddCarToRoad(GameObject car, GameObject road) {
-		GetRoadQueue (road).Enqueue (car);
+		GetRoadQueue (road).AddLast (car);
 	}
 
 	public GameObject GetRoadHead(GameObject road) {
 		var Q = GetRoadQueue (road);
 		if (Q.Count == 0) return null;
-		return Q.Peek ();
+		return Q.First.Value;
+	}
+
+	public GameObject GetRoadTail(GameObject road) {
+		var Q = GetRoadQueue (road);
+		if (Q.Count == 0) return null;
+		return Q.Last.Value;
 	}
 
 	public void Spawn(float degrees) {
 		if (cars.Length == 0) {
 			throw new UnityException("No car prefabs set!");
 		}
+
 		GameObject parent = new GameObject ();
 		parent.transform.position = Vector3.zero;
 		parent.name = "Spawned car";
 		parent.hideFlags |= HideFlags.HideInHierarchy;
+
 		int id = Random.Range (0, cars.Length);
 		GameObject car = (GameObject)Instantiate (cars[id]);
+		var currentRoad = Command.GetRoadFromAngle (degrees);
+
 		car.transform.SetParent (parent.transform);
 		car.tag = "car";
-		car.transform.localPosition += new Vector3(DEFAULT_NORTH_POSITION.x, 0, DEFAULT_NORTH_POSITION.y);
+
+		var tail = GetRoadTail (currentRoad);
+		car.transform.localPosition += new Vector3 (DEFAULT_NORTH_POSITION.x, 0, tail == null ? DEFAULT_NORTH_POSITION.y : Mathf.Max (DEFAULT_NORTH_POSITION.y + 10f, car.transform.localPosition.z));
+
 		// car.transform.localRotation = new Quaternion (-0.7f, 0, 0.7f, 0);
+		
 		parent.transform.Rotate (new Vector3 (0, degrees, 0));
-		AddCarToRoad (car, Command.GetRoadFromAngle (degrees));
+		AddCarToRoad (car, currentRoad);
 		/*
 
 		GameObject road = Command.GetRoadFromAngle (degrees);

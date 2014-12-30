@@ -3,51 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GoCommand : Command {
-	public static HashSet<GameObject> Roads = new HashSet<GameObject>();
 	
 	public override void PerformCommand() {
 		
 		base.PerformCommand ();
-		StartCoroutine (UnfadeToNormal ());
 
 		GameObject currentRoad = GetRoadFromAngle (this.transform.rotation.eulerAngles.y);
-		StopCommand.Roads.Remove (currentRoad);
+		GetComponent<StopCommand>().Roads.Remove (currentRoad);
 
 		if (Roads.Contains (currentRoad))
 			return;
 		Roads.Add (currentRoad);
 
-		// code to stop all cars, but very slow
-		/*
-		foreach (GameObject car in cars) {
-			if (GetRoadFromAngle (car.transform.parent.rotation.eulerAngles.y) == currentRoad)
-				car.GetComponent<CarMovement> ().movement = CarMovement.GO;
-		}
-		*/
-
-		// just stop the leading car and all's fine
-
-		/*
-		GameObject leading = null;
-		foreach (GameObject car in cars) {
-			if (GetRoadFromAngle(car.transform.parent.rotation.eulerAngles.y) == currentRoad) {
-				CarMovement move = car.GetComponent<CarMovement>();
-				if (move.movement == CarMovement.STOP) {
-					move.movement = CarMovement.NORMAL;
-					move.SetToOriginal ();
-				}
-			}
-		}*/
-
+		
+		StartCoroutine (UnfadeToNormal (currentRoad));
 		if (GetComponent<StopCommand> ())
 			GetComponent<StopCommand> ().ResetCommand ();
 		this.TransformCommand ();
 	}
 
-	IEnumerator UnfadeToNormal() {
+	IEnumerator UnfadeToNormal(GameObject road) {
 		yield return new WaitForSeconds(2f);
 		Glow glow = GetRoadFromAngle (transform.rotation.eulerAngles.y).GetComponent<Glow> ();
-		glow.SetColor (glow.originalColor);
+		if (glow.GetColor() == commandColor) {
+			glow.SetColor (glow.originalColor);
+			Roads.Remove (road);
+		}
 	}
 	
 	// Use this for initialization
@@ -55,10 +36,8 @@ public class GoCommand : Command {
 		commandColor = Color.green;
 	}
 
+
 	void Update() {
-		foreach (GameObject road in Roads) {
-			GameObject head = GetCarSpawner().GetRoadHead (road);
-			if (head) head.GetComponent<CarMovement>().movement = CarMovement.GO;
-		}
+		DeliverCarMovement (CarMovement.GO);
 	}
 }
