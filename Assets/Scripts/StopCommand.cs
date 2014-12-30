@@ -13,7 +13,7 @@ public class StopCommand : Command {
 		if (Roads.Contains (currentRoad))
 			return;
 		Roads.Add (currentRoad);
-		GameObject[] cars = GameObject.FindGameObjectsWithTag ("car");
+		// GameObject[] cars = GameObject.FindGameObjectsWithTag ("car");
 		// code to stop all cars, but very slow
 		/*
 		foreach (GameObject car in cars) {
@@ -23,6 +23,7 @@ public class StopCommand : Command {
 		*/
 
 		// just stop the leading car and all's fine
+		/*
 		GameObject leading = null;
 		foreach (GameObject car in cars) {
 			if (car.transform.localPosition.z > 15 && GetRoadFromAngle(car.transform.parent.rotation.eulerAngles.y) == currentRoad) {
@@ -34,7 +35,7 @@ public class StopCommand : Command {
 			CarMovement move = leading.GetComponent<CarMovement> ();
 			move.movement = CarMovement.STOP;
 			move.targetVelocity = Vector3.zero;
-		}
+		}*/
 		// Component[] comp = GetComponentsInChildren<AnimatedTransform>();
 
 		if (GetComponent<GoCommand> ())
@@ -47,8 +48,10 @@ public class StopCommand : Command {
 		commandColor = Color.red;
 	}
 	void Update() {
-		// if (Input.GetKeyDown (KeyCode.R))
-		//	PerformCommand();
+		foreach (GameObject road in Roads) {
+			GameObject head = GetCarSpawner().GetRoadHead (road);
+			if (head) head.GetComponent<CarMovement>().movement = CarMovement.STOP;
+		}
 	}
 
 }

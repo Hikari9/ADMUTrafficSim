@@ -9,11 +9,11 @@ public class CarMovement : MonoBehaviour {
 
 	public const int STOP = 0, GO = 1, NORMAL = -1;
 	public int movement = NORMAL;
-	int prevMovement;
+	// int prevMovement;
 
 	// Use this for initialization
 	void Start () {
-		prevMovement = movement;
+		// prevMovement = movement;
 		originalTargetVelocity = targetVelocity;
 		// Debug.Log (this.transform.transform.rotation);
 	}
@@ -25,6 +25,12 @@ public class CarMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (movement == GO) {
+			targetVelocity = originalTargetVelocity;
+			movement = NORMAL;
+		} else if (movement == STOP) {
+			targetVelocity = Vector3.zero;
+		}
 		Vector3 localVelocity = transform.InverseTransformDirection (rigidbody.velocity);
 		Vector3 need = targetVelocity - localVelocity;
 		Vector3 addend = need * Mathf.Min (1f, Time.deltaTime * acceleration);

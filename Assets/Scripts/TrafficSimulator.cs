@@ -26,9 +26,9 @@ public class TrafficSimulator : MonoBehaviour {
 		while (true) {
 			var x = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<CarSpawner>();
 			if (Random.value < 0.5f)
-				x.spawnNorth ();
+				x.SpawnNorth ();
 			else
-				x.spawnWest ();
+				x.SpawnWest ();
 			yield return new WaitForSeconds(spawnTimer);
 		}
 	}

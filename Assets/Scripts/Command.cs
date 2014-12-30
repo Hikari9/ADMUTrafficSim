@@ -4,6 +4,13 @@ using System.Collections.Generic;
 
 public class Command : MonoBehaviour {
 	protected Color commandColor = Color.white;
+	private static CarSpawner carspawner = null;
+	public static CarSpawner GetCarSpawner() {
+		if (carspawner == null)
+			carspawner = GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<CarSpawner> ();
+		Debug.Log (carspawner);
+		return carspawner;
+	}
 
 	[System.Serializable]
 	public class Targetter {

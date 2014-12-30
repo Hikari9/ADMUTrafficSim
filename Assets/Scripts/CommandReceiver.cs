@@ -14,18 +14,18 @@ public class CommandReceiver : MonoBehaviour {
 	void Start () {
 		spawn = GetComponent<CarSpawner> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		try {
 			if (Input.GetKeyDown (spawnNorth))
-				spawn.spawnNorth();
+				spawn.SpawnNorth();
 			if (Input.GetKeyDown (spawnSouth))
-				spawn.spawnSouth();
+				spawn.SpawnSouth();
 			if (Input.GetKeyDown (spawnEast))
-				spawn.spawnEast();
+				spawn.SpawnEast();
 			if (Input.GetKeyDown(spawnWest))
-				spawn.spawnWest();
+				spawn.SpawnWest();
 		}
 		catch {
 			Debug.Log ("Exception thrown.");

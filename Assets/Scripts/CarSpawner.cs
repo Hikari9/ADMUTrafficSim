@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CarSpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
-		Main = this;
+		// Main = this;
 	}
 	
 	// Update is called once per frame
@@ -12,17 +13,42 @@ public class CarSpawner : MonoBehaviour {
 		
 	}
 
-	public static CarSpawner Main;
+	// public static CarSpawner Main;
 	public GameObject[] cars;
 	public Vector2 DEFAULT_NORTH_POSITION = new Vector2(-5, 50);
 
-	public void spawn(float degrees) {
+	Dictionary<GameObject, Queue<GameObject>> Roads = new Dictionary<GameObject, Queue<GameObject>> ();
+
+	public Queue<GameObject> GetRoadQueue(GameObject road) {
+		if (!Roads.ContainsKey (road))
+			Roads.Add (road, new Queue<GameObject> ());
+		Queue<GameObject> Q = Roads [road];
+		while (Q.Count > 0) {
+			GameObject car = Q.Peek ();
+			if (car == null || (car.transform.localPosition.z < 15 && car.GetComponent<CarMovement>().movement != CarMovement.STOP))
+				Q.Dequeue ();
+			else break;
+		}
+		return Q;
+	}
+
+	public void AddCarToRoad(GameObject car, GameObject road) {
+		GetRoadQueue (road).Enqueue (car);
+	}
+
+	public GameObject GetRoadHead(GameObject road) {
+		var Q = GetRoadQueue (road);
+		if (Q.Count == 0) return null;
+		return Q.Peek ();
+	}
+
+	public void Spawn(float degrees) {
 		if (cars.Length == 0) {
 			throw new UnityException("No car prefabs set!");
 		}
 		GameObject parent = new GameObject ();
 		parent.transform.position = Vector3.zero;
-		parent.name = "spawned car";
+		parent.name = "Spawned car";
 		parent.hideFlags |= HideFlags.HideInHierarchy;
 		int id = Random.Range (0, cars.Length);
 		GameObject car = (GameObject)Instantiate (cars[id]);
@@ -31,7 +57,7 @@ public class CarSpawner : MonoBehaviour {
 		car.transform.localPosition += new Vector3(DEFAULT_NORTH_POSITION.x, 0, DEFAULT_NORTH_POSITION.y);
 		// car.transform.localRotation = new Quaternion (-0.7f, 0, 0.7f, 0);
 		parent.transform.Rotate (new Vector3 (0, degrees, 0));
-
+		AddCarToRoad (car, Command.GetRoadFromAngle (degrees));
 		/*
 
 		GameObject road = Command.GetRoadFromAngle (degrees);
@@ -56,34 +82,34 @@ public class CarSpawner : MonoBehaviour {
 		Destroy (car);
 	}
 
-	/* old spawn
-	public static void spawn(float north, float east) {
-		if (Time.time - spawnTime > spawnTimeAllowance) {
-			spawnTime = Time.time;
+	/* old Spawn
+	public static void Spawn(float north, float east) {
+		if (Time.time - SpawnTime > SpawnTimeAllowance) {
+			SpawnTime = Time.time;
 			Vector3 pos = new Vector3 (north, 0f, east);
 			Quaternion dir = new Quaternion(-0.7f, 0, 0.7f, 0) * Quaternion.LookRotation (new Vector3(-north, 0f, east));
 			Instantiate (prefab, pos, dir);
 		}
 	} */
 
-	public void spawnNorth() {
-		// spawn (0, 50);
-		spawn (0);
+	public void SpawnNorth() {
+		// Spawn (0, 50);
+		Spawn (0);
 	}
 
-	public void spawnEast() {
-		// spawn (50, 0);
-		spawn (90);
+	public void SpawnEast() {
+		// Spawn (50, 0);
+		Spawn (90);
 	}
 
-	public void spawnSouth() {
-		// spawn (0, -50);
-		spawn (180);
+	public void SpawnSouth() {
+		// Spawn (0, -50);
+		Spawn (180);
 	}
 
-	public void spawnWest() {
-		// spawn (-50, 0);
-		spawn (270);
+	public void SpawnWest() {
+		// Spawn (-50, 0);
+		Spawn (270);
 	}
 
 }
