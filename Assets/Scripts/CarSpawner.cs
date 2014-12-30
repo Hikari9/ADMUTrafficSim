@@ -71,7 +71,7 @@ public class CarSpawner : MonoBehaviour {
 		car.tag = "car";
 
 		var tail = GetRoadTail (currentRoad);
-		car.transform.localPosition += new Vector3 (DEFAULT_NORTH_POSITION.x, 0, tail == null ? DEFAULT_NORTH_POSITION.y : Mathf.Max (DEFAULT_NORTH_POSITION.y + 10f, car.transform.localPosition.z));
+		car.transform.localPosition += new Vector3 (DEFAULT_NORTH_POSITION.x, 0, tail == null ? DEFAULT_NORTH_POSITION.y : Mathf.Max (DEFAULT_NORTH_POSITION.y, tail.transform.localPosition.z + 10f));
 
 		// car.transform.localRotation = new Quaternion (-0.7f, 0, 0.7f, 0);
 		
