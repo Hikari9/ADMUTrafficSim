@@ -6,6 +6,8 @@ public class KeyLook : MonoBehaviour {
 
 	public KeyCode[] leftLook = {KeyCode.A};
 	public KeyCode[] rightLook = {KeyCode.D};
+	public KeyCode[] left = {KeyCode.A};
+	public KeyCode[] right = {KeyCode.D};
 	public float rotationSpeed = 10;
 	public bool northWestLock = true;
 
