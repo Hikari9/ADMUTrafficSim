@@ -3,7 +3,8 @@ using System.Collections;
 
 public class LoadSplash : MonoBehaviour {
 
-	public Texture splash;
+	public Texture[] splash;
+	int current = 0;
 	// public int width;
 	// public int height;
 	private Rect r;
@@ -14,11 +15,16 @@ public class LoadSplash : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+	void Update() {
+		if (Input.anyKeyDown)
+			current++;
+		if (current >= splash.Length)
+			Application.LoadLevel ("Main");
+	}
 	void OnGUI () {
-		GUI.DrawTexture(r, splash);
-		
-		if(Input.anyKey) {
-			Application.LoadLevel("Main");
+		try {
+			GUI.DrawTexture(r, splash[current]);
 		}
+		catch {}
 	}
 }
