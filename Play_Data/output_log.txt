@@ -22,56 +22,28 @@ Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Manag
 Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\LeapCSharp.NET3.5.dll into Unity Child Domain
 Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll (this message is harmless)
 Loading C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll into Unity Child Domain
-- Completed reload, in  0.144 seconds
+- Completed reload, in  0.119 seconds
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Play_Data\Managed\System.dll (this message is harmless)
-Loading level: Splash
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-GameLoader:LoadLevel(String) (at C:\Users\Rico\Documents\GitHub\ADMUTrafficSim\Assets\Scripts\GameLoader.cs:7)
-UnityEngine.Events.InvokableCall`1:Invoke(Object[]) (at C:\BuildAgent\work\d63dfc6385190b60\Runtime\Export\UnityEvent.cs:141)
-UnityEngine.Events.CachedInvokableCall`1:Invoke(Object[]) (at C:\BuildAgent\work\d63dfc6385190b60\Runtime\Export\UnityEvent.cs:259)
-UnityEngine.Events.InvokableCallList:Invoke(Object[]) (at C:\BuildAgent\work\d63dfc6385190b60\Runtime\Export\UnityEvent.cs:576)
-UnityEngine.Events.UnityEventBase:Invoke(Object[]) (at C:\BuildAgent\work\d63dfc6385190b60\Runtime\Export\UnityEvent.cs:718)
-UnityEngine.Events.UnityEvent:Invoke() (at C:\BuildAgent\work\d63dfc6385190b60\Runtime\Export\UnityEvent_0.cs:53)
-UnityEngine.UI.Button:Press() (at C:\BuildAgent\work\d63dfc6385190b60\Extensions\guisystem\guisystem\UI\Core\Button.cs:36)
-UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at C:\BuildAgent\work\d63dfc6385190b60\Extensions\guisystem\guisystem\UI\Core\Button.cs:45)
-UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at C:\BuildAgent\work\d63dfc6385190b60\Extensions\guisystem\guisystem\EventSystem\ExecuteEvents.cs:52)
-UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\BuildAgent\work\d63dfc6385190b60\Extensions\guisystem\guisystem\EventSystem\ExecuteEvents.cs:269)
-UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\BuildAgent\work\d63dfc6385190b60\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:406)
-UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\BuildAgent\work\d63dfc6385190b60\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:290)
-UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\BuildAgent\work\d63dfc6385190b60\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:162)
-UnityEngine.EventSystems.EventSystem:Update() (at C:\BuildAgent\work\d63dfc6385190b60\Extensions\guisystem\guisystem\EventSystem\EventSystem.cs:261)
- 
-(Filename: C Line: 0)
-
-UnloadTime: 3.881114 ms
+UnloadTime: 0.257543 ms
 System memory in use before: 11.4 MB.
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 System memory in use after: 10.9 MB.
 
-Unloading 190 unused Assets to reduce memory usage. Loaded Objects now: 243.
-Total: 1.055832 ms (FindLiveObjects: 0.016998 ms CreateObjectMapping: 0.009621 ms MarkObjects: 0.095897 ms  DeleteObjects: 0.318802 ms)
+Unloading 190 unused Assets to reduce memory usage. Loaded Objects now: 244.
+Total: 1.020553 ms (FindLiveObjects: 0.017639 ms CreateObjectMapping: 0.009942 ms MarkObjects: 0.101670 ms  DeleteObjects: 0.330990 ms)
 
 WARNING: Shader Unsupported: 'Hidden/Nature/Tree Creator Leaves Optimized' - Pass '' shader state not supported
 WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
-UnloadTime: 0.285446 ms
+UnloadTime: 0.245676 ms
 System memory in use before: 30.9 MB.
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 System memory in use after: 28.5 MB.
 
 Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3037.
-Total: 1.539488 ms (FindLiveObjects: 0.101028 ms CreateObjectMapping: 0.032714 ms MarkObjects: 0.429132 ms  DeleteObjects: 0.353761 ms)
+Total: 1.405746 ms (FindLiveObjects: 0.098463 ms CreateObjectMapping: 0.031751 ms MarkObjects: 0.324255 ms  DeleteObjects: 0.364025 ms)
 
 WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
-UnloadTime: 7.484799 ms
-System memory in use before: 31.0 MB.
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-System memory in use after: 18.9 MB.
-
-Unloading 1305 unused Assets to reduce memory usage. Loaded Objects now: 647.
-Total: 8.832493 ms (FindLiveObjects: 0.102953 ms CreateObjectMapping: 0.106481 ms MarkObjects: 0.313991 ms  DeleteObjects: 7.523928 ms)
-
