@@ -2,28 +2,17 @@
 using System.Collections;
 
 public class TrafficSimulator : MonoBehaviour {
-
-	int spawns;
 	public float minSpawnTimer = 1f;
 	public float maxSpawnTimer = 2f;
 
 	// Use this for initialization
 	void Start () {
-		spawns = 0;
 		StartCoroutine (Spawner ());
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-	}
-
-	public int GetScore() {
-		long total = 0;
-		foreach (GameObject road in GameObject.FindGameObjectsWithTag ("road")) {
-			
-		}
-		return spawns - GameObject.FindGameObjectsWithTag ("car").Length;
 	}
 
 	IEnumerator Spawner() {

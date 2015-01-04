@@ -75,9 +75,9 @@ public class RandomBuildingSpawner : MonoBehaviour {
 			float h = Random.Range (minHeight, maxHeight);
 
 			if (rx + l > x2)
-				l = x2 - rx;
+				l = x2 - rx + Random.Range (-1f, 1f); // add epsilon to avoid flicker
 			if (ry + w > y2)
-				w = y2 - ry;
+				w = y2 - ry + Random.Range (-1f, 1f); // add epsilon to avoid flicker
 			Building b = new Building(rx, surfaceLevel, ry, l, h, w);
 			if (randomColors)
 				b.setColor (new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f)));

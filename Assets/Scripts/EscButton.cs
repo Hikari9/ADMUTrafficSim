@@ -11,7 +11,7 @@ public class EscButton : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
-			Application.LoadLevel ("Main Menu");
+			Application.Quit ();
 		}
 	}
 }

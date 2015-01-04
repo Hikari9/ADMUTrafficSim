@@ -1,13 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameGUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TrafficSimulator.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameGUI.cs" Line="53" Column="40" />
+      <File FileName="Assets\Scripts\GameLoader.cs" Line="7" Column="21" />
+      <File FileName="Assets\Scripts\GameGUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Command.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CommandReceiver.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Glow.cs" Line="1" Column="1" />
       <File FileName="Assets\Leap Motion\Scenes Pack\Scripts\Leap Scenes\Boxing\PunchingBag.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CarSpawner.cs" Line="77" Column="39" />
+      <File FileName="Assets\Scripts\CarSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TrafficSimulator.cs" Line="15" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -28,7 +28,8 @@ public class GameGUI : MonoBehaviour {
 		if (!GameOver && Input.GetKeyDown (KeyCode.Space))
 			Pausing ^= true;
 		else if (GameOver && Input.anyKeyDown) {
-			Application.LoadLevel ("Main Menu");
+			Application.Quit ();
+			// Command.LoadLevel ("Main Menu");
 		}
 
 		Time.timeScale = (Pausing || GameOver) ? 0f : 1f;

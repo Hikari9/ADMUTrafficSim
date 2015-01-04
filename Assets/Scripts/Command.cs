@@ -88,6 +88,14 @@ public class Command : MonoBehaviour {
 		int id = Mathf.RoundToInt (angle / 90) % 4;
 		return roads [(5 - id) % 4];
 	}
+
+	public static void LoadLevel(string level) {
+		Application.LoadLevel (level);
+		foreach (GameObject o in GameObject.FindObjectsOfType<GameObject> ()) {
+			Destroy (o.gameObject);
+		}
+	}
+
 	void Update() {
 	}
 

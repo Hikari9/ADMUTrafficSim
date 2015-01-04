@@ -4,9 +4,10 @@ using System.Collections;
 public class GameLoader : MonoBehaviour {
 
 	public void LoadLevel(string level) {
-		Debug.Log ("Loading level: " + level);
-		Application.LoadLevel (level);
+		Command.LoadLevel (level);
 	}
+
+
 
 	public void Quit() {
 		Application.Quit ();

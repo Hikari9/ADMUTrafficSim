@@ -19,7 +19,7 @@ public class LoadSplash : MonoBehaviour {
 		if (Input.anyKeyDown)
 			current++;
 		if (current >= splash.Length)
-			Application.LoadLevel ("Main");
+			Command.LoadLevel ("Main");
 	}
 	void OnGUI () {
 		try {
