@@ -37,6 +37,25 @@ public class CarSpawner : MonoBehaviour {
 		return Q;
 	}
 
+	Dictionary<GameObject, int> RoadScore = new Dictionary<GameObject, int>();
+	Dictionary<GameObject, bool> PassedCars = new Dictionary<GameObject, bool>();
+	public void PassCar(GameObject car) {
+		if (PassedCars.ContainsKey (car))
+			return;
+		PassedCars.Add (car, true);
+		GameObject road = Command.GetRoadFromAngle (car.transform.parent.rotation.eulerAngles.y);
+		//Debug.Log ("Passed car on road: " + road);
+		if (!RoadScore.ContainsKey (road))
+			RoadScore.Add (road, 1);
+		else
+			RoadScore[road]++;
+	}
+	public int GetRoadScore(GameObject road) {
+		if (!RoadScore.ContainsKey (road))
+			return 0;
+		return RoadScore[road];
+	}
+
 	public void AddCarToRoad(GameObject car, GameObject road) {
 		GetRoadQueue (road).AddLast (car);
 	}

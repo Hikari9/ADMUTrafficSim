@@ -50,8 +50,6 @@
      <Compile Include="Assets\EasyRoads3D Free\scripts\MarkerScript.cs" />
      <Compile Include="Assets\EasyRoads3D Free\scripts\RoadObjectScript.cs" />
      <Compile Include="Assets\EasyRoads3D Free\scripts\SurfaceScript.cs" />
-     <Compile Include="Assets\EscButton.cs" />
-     <Compile Include="Assets\GamePauser.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Hand Types\FingerLineRender.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Hand Types\HandModel.cs" />
      <Compile Include="Assets\Leap Motion\Leap Controller\Scripts\Hand Types\HandTypeBase.cs" />
@@ -120,6 +118,8 @@
      <Compile Include="Assets\Scripts\Command.cs" />
      <Compile Include="Assets\Scripts\CommandReceiver.cs" />
      <Compile Include="Assets\Scripts\CommandTransformer.cs" />
+     <Compile Include="Assets\Scripts\EscButton.cs" />
+     <Compile Include="Assets\Scripts\GameGUI.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
      <Compile Include="Assets\Scripts\Glow.cs" />
      <Compile Include="Assets\Scripts\GoCommand.cs" />

@@ -19,7 +19,10 @@ public class TrafficSimulator : MonoBehaviour {
 	}
 
 	public int GetScore() {
-		// make a more efficient one next
+		long total = 0;
+		foreach (GameObject road in GameObject.FindGameObjectsWithTag ("road")) {
+			
+		}
 		return spawns - GameObject.FindGameObjectsWithTag ("car").Length;
 	}
 
