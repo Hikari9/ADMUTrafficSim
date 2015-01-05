@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CarMovement : MonoBehaviour {
 
@@ -58,6 +59,20 @@ public class CarMovement : MonoBehaviour {
 	public void OnTriggerEnter(Collider collision) {
 		OnTriggerStay (collision);
 	}*/
+
+
+
+	public void OnCollisionEnter(Collision collision) {
+		Debug.Log ("Colliding.");
+		if (collision.collider.tag == "car") {
+			GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<GameGUI> ().AddCollision ();
+
+			Command.GetCarSpawner ().DestroyCar (collision.collider.gameObject);
+			Command.GetCarSpawner ().DestroyCar (this.gameObject);
+		}
+	}
+	
+
 
 	public void OnTriggerStay(Collider collision) {
 		if (movement != NORMAL) return;

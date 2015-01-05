@@ -24,15 +24,20 @@ public class CarSpawner : MonoBehaviour {
 			Roads.Add (road, new LinkedList<GameObject> ());
 		var Q = Roads [road];
 		while (Q.Count > 0) {
-			GameObject car = Q.First.Value;
-			if (car == null)
-				// car destroyed
-				Q.RemoveFirst ();
-			else if (car.transform.localPosition.z < 10 && car.GetComponent<CarMovement>().movement != CarMovement.STOP) {
-				car.GetComponent<CarMovement>().movement = CarMovement.NORMAL;
-				Q.RemoveFirst ();
+			try {
+				GameObject car = Q.First.Value;
+				if (car == null)
+					// car destroyed
+					Q.RemoveFirst ();
+				else if (car.transform.localPosition.z < 10 && car.GetComponent<CarMovement>().movement != CarMovement.STOP) {
+					car.GetComponent<CarMovement>().movement = CarMovement.NORMAL;
+					Q.RemoveFirst ();
+				}
+				else break;
 			}
-			else break;
+			catch (MissingReferenceException ex) {
+				Q.RemoveFirst();
+			}
 		}
 		return Q;
 	}

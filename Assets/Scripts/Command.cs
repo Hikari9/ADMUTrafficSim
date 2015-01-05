@@ -63,7 +63,7 @@ public class Command : MonoBehaviour {
 		HashSet<GameObject> change = new HashSet<GameObject> ();
 		foreach (GameObject road in Roads) {
 			GameObject head = GetCarSpawner().GetRoadHead (road);
-			if (head) {
+			if (head != null) {
 				if (current.Remove (head))
 					next.Add (head);
 				else
@@ -71,15 +71,21 @@ public class Command : MonoBehaviour {
 			}
 			//head.GetComponent<CarMovement>().movement = CarMovement.GO;
 		}
-		foreach (var car in current)
-			car.GetComponent<CarMovement>().movement = CarMovement.NORMAL;
+		foreach (var car in current) {
+			if (car.gameObject == null) continue;
+			car.GetComponent<CarMovement> ().movement = CarMovement.NORMAL;
+		}
 
-		foreach (var car in change)
+		foreach (var car in change) {
+			if (car.gameObject == null) continue;
 			car.GetComponent<CarMovement> ().movement = movement;
+		}
 
 		current = next;
-		foreach (var car in change)
+		foreach (var car in change) {
+			if (car.gameObject == null) continue;
 			current.Add (car);
+		}
 	}
 
 	public static GameObject GetRoadFromAngle(float angle) {
