@@ -63,7 +63,8 @@ public class CarMovement : MonoBehaviour {
 
 
 	public void OnCollisionEnter(Collision collision) {
-		Debug.Log ("Colliding.");
+		if (Mathf.Abs (this.transform.parent.rotation.eulerAngles.y - collision.transform.parent.eulerAngles.y) < 1e-6f)
+			return;
 		if (collision.collider.tag == "car") {
 			GameObject.FindGameObjectWithTag ("GameMaster").GetComponent<GameGUI> ().AddCollision ();
 
