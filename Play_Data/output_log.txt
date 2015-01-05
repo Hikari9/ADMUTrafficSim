@@ -22,7 +22,7 @@ Platform assembly: D:\GitHub\ADMUTrafficSim\Play_Data\Managed\LeapCSharp.NET3.5.
 Loading D:\GitHub\ADMUTrafficSim\Play_Data\Managed\LeapCSharp.NET3.5.dll into Unity Child Domain
 Platform assembly: D:\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll (this message is harmless)
 Loading D:\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll into Unity Child Domain
-- Completed reload, in  0.188 seconds
+- Completed reload, in  0.164 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.

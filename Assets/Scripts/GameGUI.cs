@@ -6,9 +6,10 @@ public class GameGUI : MonoBehaviour {
 	protected bool Pausing = false, GameOver = false;
 	protected System.DateTime time;
 	public float gameSeconds = 60 * 3;
-	public int COLLISION_COST = 300;
+	
 	int collisions = 0;
 	bool IsColliding = false;
+	
 	public void AddCollision() {
 		collisions++;
 		StartCoroutine (Collide ());
@@ -73,24 +74,27 @@ public class GameGUI : MonoBehaviour {
 			if (score > 0) product *= score;
 		}
 		long totalScore = sum + (product == 1 ? 0 : product);
-		return totalScore - collisions * COLLISION_COST;
+		return totalScore / (collisions + 1);
 	}
 
 	public void ShowScore() {
 		drawString ("Score: " + GetScore (), 0, 50, 40, Color.white); 
 	}
+	
+	public void ShowCollisionCount() {
+		drawString ("Collisions: " + collisions, 0, 100, 40, Color.white);
+	}
 
-
-	public void ShowCollision() {
-		drawString ("Car Collision!! -" + this.COLLISION_COST + " to score", 0, 100, 40, Color.white);
-
+	public void ShowPopupCollision() {
+		drawString ("Car Collision!!", 0, 150, 40, Color.white);
 	}
 
 	void OnGUI() {
 		ShowTimer();
 		ShowScore();
+		ShowCollisionCount ();
 		if (IsColliding)
-			ShowCollision ();
+			ShowPopupCollision ();
 		if (GameOver) {
 			drawString ("GAME OVER", (Screen.width)/2 -(Screen.width)/4,(Screen.height)/2-(Screen.height)/4, 80, Color.white);
 			drawString ("\nYour score is: " + GetScore (), (Screen.width)/2 -(Screen.width)/4,100+(Screen.height)/2-(Screen.height)/4, 40, Color.white);
