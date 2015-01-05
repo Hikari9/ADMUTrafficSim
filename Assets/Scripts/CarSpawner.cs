@@ -36,6 +36,7 @@ public class CarSpawner : MonoBehaviour {
 				else break;
 			}
 			catch (MissingReferenceException ex) {
+				Debug.Log("GameObject does not exist");
 				Q.RemoveFirst();
 			}
 		}

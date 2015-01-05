@@ -63,6 +63,8 @@ public class Command : MonoBehaviour {
 		HashSet<GameObject> change = new HashSet<GameObject> ();
 		foreach (GameObject road in Roads) {
 			GameObject head = GetCarSpawner().GetRoadHead (road);
+			if (head != null && movement == CarMovement.STOP && head.transform.localPosition.z > 23)
+				continue;
 			if (head != null) {
 				if (current.Remove (head))
 					next.Add (head);

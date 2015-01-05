@@ -6,7 +6,7 @@ public class GameGUI : MonoBehaviour {
 	protected bool Pausing = false, GameOver = false;
 	protected System.DateTime time;
 	public float gameSeconds = 60 * 3;
-	public int COLLISION_COST = 2000;
+	public int COLLISION_COST = 300;
 	int collisions = 0;
 	bool IsColliding = false;
 	public void AddCollision() {
