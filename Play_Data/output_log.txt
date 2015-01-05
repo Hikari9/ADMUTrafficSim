@@ -22,17 +22,28 @@ Platform assembly: D:\GitHub\ADMUTrafficSim\Play_Data\Managed\LeapCSharp.NET3.5.
 Loading D:\GitHub\ADMUTrafficSim\Play_Data\Managed\LeapCSharp.NET3.5.dll into Unity Child Domain
 Platform assembly: D:\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll (this message is harmless)
 Loading D:\GitHub\ADMUTrafficSim\Play_Data\Managed\EasyRoads3D.dll into Unity Child Domain
-- Completed reload, in  0.688 seconds
+- Completed reload, in  0.263 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: D:\GitHub\ADMUTrafficSim\Play_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\GitHub\ADMUTrafficSim\Play_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 0.453719 ms
+UnloadTime: 0.302764 ms
 System memory in use before: 11.4 MB.
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 System memory in use after: 10.9 MB.
 
-Unloading 190 unused Assets to reduce memory usage. Loaded Objects now: 244.
-Total: 1.147769 ms (FindLiveObjects: 0.020098 ms CreateObjectMapping: 0.011118 ms MarkObjects: 0.158652 ms  DeleteObjects: 0.362633 ms)
+Unloading 190 unused Assets to reduce memory usage. Loaded Objects now: 242.
+Total: 1.119545 ms (FindLiveObjects: 0.019671 ms CreateObjectMapping: 0.009407 ms MarkObjects: 0.132994 ms  DeleteObjects: 0.379738 ms)
 
+WARNING: Shader Unsupported: 'Hidden/Nature/Tree Creator Leaves Optimized' - Pass '' shader state not supported
+WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
+UnloadTime: 0.371613 ms
+System memory in use before: 30.9 MB.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+System memory in use after: 28.5 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3037.
+Total: 2.444782 ms (FindLiveObjects: 0.206119 ms CreateObjectMapping: 0.056020 ms MarkObjects: 0.442173 ms  DeleteObjects: 0.503325 ms)
+
+WARNING: Shader Unsupported: 'Hidden/TerrainEngine/Details/BillboardWavingDoublePass' - Pass '' shader state not supported
