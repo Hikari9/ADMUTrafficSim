@@ -25,6 +25,6 @@ public class LoadSplash : MonoBehaviour {
 		try {
 			GUI.DrawTexture(r, splash[current]);
 		}
-		catch {}
+		catch { current++; }
 	}
 }

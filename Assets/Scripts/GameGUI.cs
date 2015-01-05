@@ -40,7 +40,9 @@ public class GameGUI : MonoBehaviour {
 		style.fontSize = fontSize;
 		style.onFocused.textColor =
 		style.onActive.textColor =
-		style.onHover.textColor = style.onNormal.textColor = fontColor;
+		style.onHover.textColor = 
+		style.onNormal.textColor = 
+		style.normal.textColor = fontColor;
 		GUI.Label (new Rect(x, y, Screen.width, Screen.height), label.ToString (), style);
 	}
 
