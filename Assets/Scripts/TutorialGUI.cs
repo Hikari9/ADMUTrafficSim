@@ -25,7 +25,54 @@ public class TutorialGUI : MonoBehaviour {
 	}
 	void Start () {
 		scenes.Add (new TutorialScene("Welcome!"));
+		// highlight enforcer
 		scenes.Add (new TutorialScene("You'll be playing as a traffic enforcer.", 60, 650));
+		scenes.Add (new TutorialScene("Your objective is to make as many cars pass the intersection in three minutes.", 60, 900));
+		scenes.Add (new TutorialScene("Avoid collisions as much as possible!", 60, 900));
+
+		// highlight timer
+		scenes.Add (new TutorialScene("Your timer below shows the remaining time.", 60, 650));
+		// jeepneys approach from N and E
+		scenes.Add (new TutorialScene(""));
+		// pause after a couple of seconds
+		// highlight cars
+		scenes.Add (new TutorialScene("There are two cars approaching!", 60, 650));
+		scenes.Add (new TutorialScene("Raise your right hand to make your car stop.", 60, 650));
+		// pause
+		// open STOP command
+		// wait for stop signal
+		scenes.Add (new TutorialScene("Good job!"));
+		// close input commands
+		// wait for score to update then highlight
+		// pause
+		scenes.Add (new TutorialScene("When you let cars pass, your score below updates.", 60, 900));
+		scenes.Add (new TutorialScene("Now wave your right hand to make the car move.", 60, 800));
+		// pause
+		// open GO command
+		// wait fot go signal
+		scenes.Add (new TutorialScene("Good job!"));
+		// close input commands
+		// wait for score to update
+		// spawn W and S
+		// pause
+		scenes.Add (new TutorialScene("Oh no! A car is approaching from the left!", 60, 900));
+		// highlight minimap
+		scenes.Add (new TutorialScene("The mini-map displays the cars around you and your current line of sight.", 60, 900));
+		scenes.Add (new TutorialScene("Use the WASD or Arrow Keys to rotate!", 60, 900));
+		// open LOOK LEFT command (only)
+		// wait for rotation
+		// play, wait for car to be near
+		scenes.Add (new TutorialScene("Good! Now make the car stop to avoid a collision.", 60, 900));
+		// close input commands
+		// open STOP command
+		// wait for stop signal
+		// play
+		scenes.Add (new TutorialScene("Good job! You now know the basics of the game.", 60, 900));
+		scenes.Add (new TutorialScene("Be careful! If cars collide, your score will be deducted.", 60, 900));
+		// highlight collisions
+		scenes.Add (new TutorialScene("You can see the number of collisions below.", 60, 900));
+		scenes.Add (new TutorialScene("Now you're ready to go! Good luck!", 80, 900));
+
 	}
 	void Update () {
 		if (CurrentScene == null) {
