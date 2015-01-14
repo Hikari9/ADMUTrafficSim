@@ -49,23 +49,38 @@ public class GameGUI : MonoBehaviour {
 		Time.timeScale = (Pausing || GameOver) ? 0f : 1f;
 	}
 
+
+	void OnGUI() {
+		ShowTimer();
+		ShowScore();
+		ShowCollisionCount ();
+		if (IsColliding)
+			ShowPopupCollision ();
+		if (GameOver)
+			ShowGameOver();
+		else if (Pausing)
+			ShowGamePaused ();
+	}
+
+	// GUI Stuff below
+
 	void drawString(object label, float x, float y, int fontSize, Color fontColor) {
 		GUIStyle style = new GUIStyle(GUI.skin.GetStyle("label"));
 		style.fontSize = fontSize;
 		style.onFocused.textColor =
-		style.onActive.textColor =
-		style.onHover.textColor = 
-		style.onNormal.textColor = 
-		style.normal.textColor = fontColor;
+			style.onActive.textColor =
+				style.onHover.textColor = 
+				style.onNormal.textColor = 
+				style.normal.textColor = fontColor;
 		GUI.Label (new Rect(x, y, Screen.width, Screen.height), label.ToString (), style);
 	}
-
+	
 	public void ShowTimer() {
 		int remaining = (int) gameSeconds;
 		string label = string.Format ("{0,2}:{1,2}", (remaining / 60).ToString ("0#"), (remaining % 60).ToString("0#"));
 		drawString (label, 0, 0, 40, Color.white);
 	}
-
+	
 	public long GetScore() {
 		long sum = 0, product = 1;
 		foreach (GameObject road in GameObject.FindGameObjectsWithTag("road")) {
@@ -76,7 +91,7 @@ public class GameGUI : MonoBehaviour {
 		long totalScore = sum + (product == 1 ? 0 : product);
 		return totalScore / (collisions + 1);
 	}
-
+	
 	public void ShowScore() {
 		drawString ("Score: " + GetScore (), 0, 50, 40, Color.white); 
 	}
@@ -84,25 +99,19 @@ public class GameGUI : MonoBehaviour {
 	public void ShowCollisionCount() {
 		drawString ("Collisions: " + collisions, 0, 100, 40, Color.white);
 	}
-
+	
 	public void ShowPopupCollision() {
 		drawString ("Car Collision!!", 0, 150, 40, Color.white);
 	}
 
-	void OnGUI() {
-		ShowTimer();
-		ShowScore();
-		ShowCollisionCount ();
-		if (IsColliding)
-			ShowPopupCollision ();
-		if (GameOver) {
-			drawString ("GAME OVER", (Screen.width)/2 -(Screen.width)/4,(Screen.height)/2-(Screen.height)/4, 80, Color.white);
-			drawString ("\nYour score is: " + GetScore (), (Screen.width)/2 -(Screen.width)/4,100+(Screen.height)/2-(Screen.height)/4, 40, Color.white);
-
-		}
-		else if (Pausing) {
-			drawString ("GAME PAUSED", (Screen.width)/2 -(Screen.width)/4,(Screen.height)/2-(Screen.height)/4, 80, Color.white);
-			drawString ("Press space to continue", (Screen.width)/2 -(Screen.width)/4,100+(Screen.height)/2-(Screen.height)/4, 40, Color.white);
-		}
+	public void ShowGameOver() {
+		drawString ("GAME OVER", (Screen.width)/2 -(Screen.width)/4,(Screen.height)/2-(Screen.height)/4, 80, Color.white);
+		drawString ("\nYour score is: " + GetScore (), (Screen.width)/2 -(Screen.width)/4,100+(Screen.height)/2-(Screen.height)/4, 40, Color.white);
 	}
+
+	public void ShowGamePaused() {
+		drawString ("GAME PAUSED", (Screen.width)/2 -(Screen.width)/4,(Screen.height)/2-(Screen.height)/4, 80, Color.white);
+		drawString ("Press space to continue", (Screen.width)/2 -(Screen.width)/4,100+(Screen.height)/2-(Screen.height)/4, 40, Color.white);
+	}
+
 }
