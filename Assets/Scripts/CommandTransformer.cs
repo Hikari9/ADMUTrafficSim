@@ -17,7 +17,6 @@ public class CommandTransformer : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
 	void dfs(Transform child, Command command, GameObject prefab) {
