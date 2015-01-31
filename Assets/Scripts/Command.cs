@@ -12,6 +12,7 @@ public class Command : MonoBehaviour {
 		return carspawner;
 	}
 
+	/*
 	[System.Serializable]
 	public class Targetter {
 		public GameObject gameobject;
@@ -25,8 +26,13 @@ public class Command : MonoBehaviour {
 	}
 	public List<Targetter> transformers = new List<Targetter>();
 	//public List<KeyValuePair<GameObject, PositionRotation>> transformers = new List<KeyValuePair<GameObject, PositionRotation>>();
+	*/
+
+	public AnimationClip animationClip = null;
 
 	public void ResetCommand() {
+		GetComponent<Animator> ().Play ("idle");
+		/*
 		foreach (Targetter target in transformers) {
 			if (!target.gameobject.GetComponent<AnimatedTargetedTransform>()) {
 				target.gameobject.AddComponent <AnimatedTargetedTransform>();
@@ -34,10 +40,14 @@ public class Command : MonoBehaviour {
 			}
 			AnimatedTargetedTransform trans = target.gameobject.GetComponent<AnimatedTargetedTransform>();
 			trans.Reset ();
-		}
+		}*/
 	}
 
 	public void TransformCommand() {
+		if (animationClip) {
+			GetComponent<Animator> ().Play (animationClip.name);
+		}
+		/*
 		foreach (Targetter target in transformers) {
 			if (!target.gameobject.GetComponent<AnimatedTargetedTransform>()) {
 				target.gameobject.AddComponent <AnimatedTargetedTransform>();
@@ -46,7 +56,7 @@ public class Command : MonoBehaviour {
 			AnimatedTargetedTransform trans = target.gameobject.GetComponent<AnimatedTargetedTransform>();
 			trans.SetPosition (target.position);
 			trans.SetRotation (target.rotation);
-		}
+		}*/
 	}
 
 	public virtual void PerformCommand() {

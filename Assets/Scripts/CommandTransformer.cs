@@ -11,15 +11,15 @@ public class CommandTransformer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		ListTransformers (stopCommand, stopPrefab);
-		ListTransformers (goCommand, goPrefab);
+		// ListTransformers (stopCommand, stopPrefab);
+		// ListTransformers (goCommand, goPrefab);
 	}
 
 	// Update is called once per frame
 	void Update () {
 	
 	}
-
+	/*
 	void dfs(Transform child, Command command, GameObject prefab) {
 		Transform partner = prefab.transform.Find (child.name);
 		if (!partner) return;
@@ -33,5 +33,5 @@ public class CommandTransformer : MonoBehaviour {
 		if (command && prefab) {
 			dfs (transform.FindChild ("Armature"), command, prefab);
 		}
-	}
+	}*/
 }
