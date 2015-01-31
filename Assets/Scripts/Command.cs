@@ -29,9 +29,10 @@ public class Command : MonoBehaviour {
 	*/
 
 	public AnimationClip animationClip = null;
+	public int loops = 1;
 
 	public void ResetCommand() {
-		GetComponent<Animator> ().Play ("idle");
+		GetComponent<Animator> ().Play ("idle", 0);
 		/*
 		foreach (Targetter target in transformers) {
 			if (!target.gameobject.GetComponent<AnimatedTargetedTransform>()) {
@@ -45,7 +46,7 @@ public class Command : MonoBehaviour {
 
 	public void TransformCommand() {
 		if (animationClip) {
-			GetComponent<Animator> ().Play (animationClip.name);
+			GetComponent<Animator> ().Play(animationClip.name, 1);
 		}
 		/*
 		foreach (Targetter target in transformers) {
