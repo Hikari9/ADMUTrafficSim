@@ -80,10 +80,10 @@
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>C:/Users/rico/Documents/GitHub/ADMUTrafficSim/Assets/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>C:/Users/mnmkami/Documents/GitHub/ADMUTrafficSim/Assets/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
  <Reference Include="EasyRoads3D">
- <HintPath>C:/Users/rico/Documents/GitHub/ADMUTrafficSim/Assets/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
+ <HintPath>C:/Users/mnmkami/Documents/GitHub/ADMUTrafficSim/Assets/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
