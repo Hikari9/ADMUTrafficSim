@@ -140,23 +140,47 @@ public class CarSpawner : MonoBehaviour {
 	} */
 
 	public void SpawnNorth() {
-		// Spawn (0, 50);
-        Spawn (0).GetComponent<CarMovement>().SetSpawnLabel("North");
-	}
+        // Spawn (0, 50);
+        GameObject car = Spawn(0);
+        car.GetComponent<CarMovement>().SetSpawnLabel("North");
+        // set as minor road
+        UnsupervisedIntersectionAgent agent = car.GetComponentInChildren<UnsupervisedIntersectionAgent>();
+        agent.stop = Color.red;
+        agent.slow = Color.gray;
+        agent.go = Color.green;
+    }
 
 	public void SpawnEast() {
-		// Spawn (50, 0);
-		Spawn (90).GetComponent<CarMovement>().SetSpawnLabel("East");
+        // Spawn (50, 0);
+        GameObject car = Spawn(90);
+        car.GetComponent<CarMovement>().SetSpawnLabel("East");
+        // set as major road
+        UnsupervisedIntersectionAgent agent = car.GetComponentInChildren<UnsupervisedIntersectionAgent>();
+        agent.stop = Color.yellow;
+        agent.slow = Color.white;
+        agent.go = Color.green;
     }
 
 	public void SpawnSouth() {
-		// Spawn (0, -50);
-		Spawn (180).GetComponent<CarMovement>().SetSpawnLabel("South");
+        // Spawn (0, -50);
+        GameObject car = Spawn(180);
+        car.GetComponent<CarMovement>().SetSpawnLabel("South");
+        // set as minor road
+        UnsupervisedIntersectionAgent agent = car.GetComponentInChildren<UnsupervisedIntersectionAgent>();
+        agent.stop = Color.red;
+        agent.slow = Color.gray;
+        agent.go = Color.green;
     }
 
 	public void SpawnWest() {
-		// Spawn (-50, 0);
-		Spawn (270).GetComponent<CarMovement>().SetSpawnLabel("West");
+        // Spawn (-50, 0);
+        GameObject car = Spawn(270);
+        car.GetComponent<CarMovement>().SetSpawnLabel("West");
+        // set as major road
+        UnsupervisedIntersectionAgent agent = car.GetComponentInChildren<UnsupervisedIntersectionAgent>();
+        agent.stop = Color.yellow;
+        agent.slow = Color.white;
+        agent.go = Color.green;
     }
 
 }
