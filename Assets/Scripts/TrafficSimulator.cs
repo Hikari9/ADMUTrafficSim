@@ -18,15 +18,16 @@ public class TrafficSimulator : MonoBehaviour {
 	IEnumerator Spawner() {
 		while (true) {
 			var x = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<CarSpawner>();
+            // monte-carlo simulation
 			float rand = Random.value;
-			if (rand < 0.25f)
-				x.SpawnNorth ();
-			else if (rand < 0.50f)
-				x.SpawnWest ();
-			else if (rand < 0.75f)
+			if (rand < 0.33f) // major road
 				x.SpawnEast ();
-			else
+			else if (rand < 0.66f) // major road
+				x.SpawnWest ();
+			else if (rand < 0.83f)
 				x.SpawnSouth ();
+			else
+				x.SpawnNorth ();
 			yield return new WaitForSeconds(Random.Range (minSpawnTimer, maxSpawnTimer));
 		}
 	}

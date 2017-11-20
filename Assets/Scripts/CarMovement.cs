@@ -6,7 +6,7 @@ public class CarMovement : MonoBehaviour {
 
 	public float acceleration = 3f;
 	public Vector3 targetVelocity = new Vector3 (10f, 0f, 0f);
-	Vector3 originalTargetVelocity;
+	public Vector3 originalTargetVelocity;
 
 	public const int STOP = 0, GO = 1, NORMAL = -1;
 	public int movement = NORMAL;
@@ -26,7 +26,7 @@ public class CarMovement : MonoBehaviour {
 	}
 
     public bool IsBeforeIntersection() {
-        return transform.localPosition.z > 25f;
+        return transform.localPosition.z > 27f;
     }
 
     // Update is called once per frame

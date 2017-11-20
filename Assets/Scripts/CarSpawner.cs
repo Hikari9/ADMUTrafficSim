@@ -148,6 +148,8 @@ public class CarSpawner : MonoBehaviour {
         agent.stop = Color.red;
         agent.slow = Color.gray;
         agent.go = Color.green;
+        car.GetComponent<CarMovement>().originalTargetVelocity *= 0.5f;
+        car.GetComponent<CarMovement>().targetVelocity *= 0.5f;
     }
 
 	public void SpawnEast() {
@@ -157,7 +159,7 @@ public class CarSpawner : MonoBehaviour {
         // set as major road
         UnsupervisedIntersectionAgent agent = car.GetComponentInChildren<UnsupervisedIntersectionAgent>();
         agent.stop = Color.yellow;
-        agent.slow = Color.white;
+        agent.slow = Color.yellow;
         agent.go = Color.green;
     }
 
@@ -170,6 +172,8 @@ public class CarSpawner : MonoBehaviour {
         agent.stop = Color.red;
         agent.slow = Color.gray;
         agent.go = Color.green;
+        car.GetComponent<CarMovement>().originalTargetVelocity *= 0.5f;
+        car.GetComponent<CarMovement>().targetVelocity *= 0.5f;
     }
 
 	public void SpawnWest() {
@@ -179,7 +183,7 @@ public class CarSpawner : MonoBehaviour {
         // set as major road
         UnsupervisedIntersectionAgent agent = car.GetComponentInChildren<UnsupervisedIntersectionAgent>();
         agent.stop = Color.yellow;
-        agent.slow = Color.white;
+        agent.slow = Color.yellow;
         agent.go = Color.green;
     }
 
