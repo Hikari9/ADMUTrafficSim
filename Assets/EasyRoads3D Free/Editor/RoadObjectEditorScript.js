@@ -813,7 +813,7 @@ var flag : boolean = false;
 var terrains : Terrain[]  = MonoBehaviour.FindObjectsOfType(typeof(Terrain));
 for(terrain in terrains) {
 if(!terrain.gameObject.GetComponent(EasyRoads3DTerrainID)){
-var terrainscript : EasyRoads3DTerrainID = terrain.gameObject.AddComponent("EasyRoads3DTerrainID");
+var terrainscript : EasyRoads3DTerrainID = terrain.gameObject.AddComponent.<EasyRoads3DTerrainID>();
 var id : String = UnityEngine.Random.Range(100000000,999999999).ToString();
 terrainscript.terrainid = id;
 flag = true;

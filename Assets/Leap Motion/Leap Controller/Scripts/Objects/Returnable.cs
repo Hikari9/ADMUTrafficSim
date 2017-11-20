@@ -92,10 +92,10 @@ public class Returnable : MonoBehaviour {
 		thisTransform = transform;
 		origin = thisTransform.position;
 		rot = thisTransform.rotation;
-		thisRigidbody = rigidbody;
+		thisRigidbody = GetComponent<Rigidbody>();
 		thisRigidbody.isKinematic = false;
 		thisRigidbody.useGravity = true;
-		thisCollider = collider;
+		thisCollider = GetComponent<Collider>();
 		thisCollider.enabled = true;
         thisRigidbody.velocity = Vector3.zero;
 		thisRigidbody.angularVelocity = Vector3.zero;

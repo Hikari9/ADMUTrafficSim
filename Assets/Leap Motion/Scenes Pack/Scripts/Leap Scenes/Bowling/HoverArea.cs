@@ -10,19 +10,19 @@ public class HoverArea : MonoBehaviour {
     {
         if (up)
         {
-            o.rigidbody.AddForce(Vector3.up * hoverForce, ForceMode.Acceleration);
+            o.GetComponent<Rigidbody>().AddForce(Vector3.up * hoverForce, ForceMode.Acceleration);
         }
         else
         {
-            o.rigidbody.AddForce(-Vector3.up * hoverForce, ForceMode.Acceleration);
+            o.GetComponent<Rigidbody>().AddForce(-Vector3.up * hoverForce, ForceMode.Acceleration);
         }
     }
 
     void OnTriggerExit(Collider o)
     {
-        if (!o.rigidbody.isKinematic)
+        if (!o.GetComponent<Rigidbody>().isKinematic)
         {
-            o.rigidbody.velocity = Vector3.zero;
+            o.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
 

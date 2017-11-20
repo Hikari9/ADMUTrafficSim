@@ -37,10 +37,10 @@ public class CarMovement : MonoBehaviour {
 			targetVelocity = originalTargetVelocity;
 			// movement = NORMAL;
 		}  
-		Vector3 localVelocity = transform.InverseTransformDirection (rigidbody.velocity);
+		Vector3 localVelocity = transform.InverseTransformDirection (GetComponent<Rigidbody>().velocity);
 		Vector3 need = targetVelocity - localVelocity;
 		Vector3 addend = need * Mathf.Min (1f, Time.deltaTime * acceleration);
-		rigidbody.velocity += transform.TransformDirection (addend);
+		GetComponent<Rigidbody>().velocity += transform.TransformDirection (addend);
 		// Debug.Log (rigidbody.velocity);
 		if (OutOfBounds (transform.localPosition)) {
 			// Debug.Log ("OUT");
@@ -59,8 +59,6 @@ public class CarMovement : MonoBehaviour {
 	public void OnTriggerEnter(Collider collision) {
 		OnTriggerStay (collision);
 	}*/
-
-
 
 	public void OnCollisionEnter(Collision collision) {
 		
@@ -84,11 +82,11 @@ public class CarMovement : MonoBehaviour {
 		Transform car2 = collision.transform;
 		if (car1 == null || car2 == null || car2.GetComponent<CarMovement> () == null) return;
 		// if (car1.localPosition - car1.GetComponent<CarMovement>(). > car2.localPosition.sqrMagnitude)
-		if (Mathf.Abs (car1.parent.rotation.eulerAngles.y - car2.parent.eulerAngles.y) > 1e-6f && car2.rigidbody.IsSleeping ())
+		if (Mathf.Abs (car1.parent.rotation.eulerAngles.y - car2.parent.eulerAngles.y) > 1e-6f && car2.GetComponent<Rigidbody>().IsSleeping ())
 			car1.GetComponent<CarMovement> ().targetVelocity = car1.GetComponent<CarMovement> ().originalTargetVelocity;
 		else if (car1.localPosition.z >= car2.localPosition.z) {
 			this.targetVelocity = Vector3.zero;
-			if (car2.rigidbody.IsSleeping () && Mathf.Abs (car1.parent.rotation.eulerAngles.y - car2.parent.eulerAngles.y) < 1e-6f) {
+			if (car2.GetComponent<Rigidbody>().IsSleeping () && Mathf.Abs (car1.parent.rotation.eulerAngles.y - car2.parent.eulerAngles.y) < 1e-6f) {
 				// this.targetVelocity = this.originalTargetVelocity;
 				car2.GetComponent<CarMovement> ().targetVelocity = car2.GetComponent<CarMovement> ().originalTargetVelocity;
 			}

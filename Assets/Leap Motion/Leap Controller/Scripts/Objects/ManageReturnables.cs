@@ -43,7 +43,7 @@ public class ManageReturnables : MonoBehaviour {
 	{
 		if (c.gameObject.name == "bullet(Clone)")
 		{
-			collider.enabled = false;
+			GetComponent<Collider>().enabled = false;
 			foreach (Returnable r in pieces)
 				r.Activated(transform.position);
 		}	

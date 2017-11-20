@@ -47,7 +47,7 @@ public class FollowCam : MonoBehaviour
 
 	private void AdjustFOV()
 	{
-		cam.fieldOfView = defaultFOV + car.rigidbody.velocity.magnitude * zoomRatio;
+		cam.fieldOfView = defaultFOV + car.GetComponent<Rigidbody>().velocity.magnitude * zoomRatio;
 	}
 	#endregion
 }

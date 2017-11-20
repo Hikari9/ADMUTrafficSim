@@ -98,7 +98,7 @@ public class CarSpawner : MonoBehaviour {
 		var tail = GetRoadTail (currentRoad);
 		// if (tail)
 			// Debug.Log (tail.transform.parent.InverseTransformPoint (tail.renderer.bounds.center + tail.renderer.bounds.extents).z);
-		car.transform.localPosition += new Vector3 (DEFAULT_NORTH_POSITION.x, 0, tail == null ? DEFAULT_NORTH_POSITION.y : Mathf.Max (DEFAULT_NORTH_POSITION.y, tail.transform.parent.InverseTransformPoint (tail.renderer.bounds.center + tail.renderer.bounds.extents).z + car.transform.parent.InverseTransformPoint(car.renderer.bounds.extents).z + 5f));
+		car.transform.localPosition += new Vector3 (DEFAULT_NORTH_POSITION.x, 0, tail == null ? DEFAULT_NORTH_POSITION.y : Mathf.Max (DEFAULT_NORTH_POSITION.y, tail.transform.parent.InverseTransformPoint (tail.GetComponent<Renderer>().bounds.center + tail.GetComponent<Renderer>().bounds.extents).z + car.transform.parent.InverseTransformPoint(car.GetComponent<Renderer>().bounds.extents).z + 5f));
 
 		// car.transform.localRotation = new Quaternion (-0.7f, 0, 0.7f, 0);
 		
@@ -124,7 +124,7 @@ public class CarSpawner : MonoBehaviour {
 			Destroy (car.transform.parent.gameObject);
 		}
 		// Debug.Log ("Destroying car object.");
-		car.collider.enabled = false;
+		car.GetComponent<Collider>().enabled = false;
 		Destroy (car);
 	}
 

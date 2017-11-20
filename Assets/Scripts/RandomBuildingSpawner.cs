@@ -108,7 +108,7 @@ public class RandomBuildingSpawner : MonoBehaviour {
 		public void setColor(Color color) {
 			Material mat = new Material (Shader.Find ("Diffuse"));
 			mat.color = color;
-			this.o.renderer.material = mat;
+			this.o.GetComponent<Renderer>().material = mat;
 		}
 
 		public Building(float x, float y, float z, float dx, float dy, float dz)

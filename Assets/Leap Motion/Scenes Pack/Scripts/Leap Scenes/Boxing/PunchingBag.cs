@@ -11,7 +11,7 @@ public class PunchingBag : MonoBehaviour
 		if (leapObj)
 		{
 			Debug.Log(leapObj.maxVelocity.magnitude);
-			rigidbody.AddForceAtPosition(leapObj.maxVelocity * 800, leapObj.transform.position);
+			GetComponent<Rigidbody>().AddForceAtPosition(leapObj.maxVelocity * 800, leapObj.transform.position);
 		}
 	}
 }

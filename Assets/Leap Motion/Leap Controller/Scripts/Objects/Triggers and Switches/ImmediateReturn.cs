@@ -21,10 +21,10 @@ public class ImmediateReturn : MonoBehaviour {
             transform.position = origin;
             transform.rotation = originRot;
 
-            if (!rigidbody.isKinematic)
+            if (!GetComponent<Rigidbody>().isKinematic)
             {
-                rigidbody.velocity = Vector3.zero;
-                rigidbody.angularVelocity = Vector3.zero;
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+                GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             }
 
             gameObject.SetActive(true);

@@ -186,7 +186,7 @@ for(int i = 0; i < target.OCCCCCOOOQ.Length; i++){
 if(target.OQCODQCQOC.road.GetComponent(target.OCCCCCOOOQ[i]) != null && i != target.selectedWaterScript)DestroyImmediate(target.OQCODQCQOC.road.GetComponent(target.OCCCCCOOOQ[i]));
 }
 if(target.OCCCCCOOOQ[0] != "None Available!"  && target.OQCODQCQOC.road.GetComponent(target.OCCCCCOOOQ[target.selectedWaterScript]) == null){
-target.OQCODQCQOC.road.AddComponent(target.OCCCCCOOOQ[target.selectedWaterScript]);
+UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(target.OQCODQCQOC.road, "Assets/EasyRoads3D Free/Editor/EasyRoadsEditorMenu.cs (189,1)", target.OCCCCCOOOQ[target.selectedWaterScript]);
 
 }
 }

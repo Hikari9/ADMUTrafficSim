@@ -14,11 +14,11 @@ public class Thruster : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 newRot = transform.localRotation.eulerAngles;
-        newRot.x = transform.parent.rigidbody.velocity.magnitude * 7.0f;
+        newRot.x = transform.parent.GetComponent<Rigidbody>().velocity.magnitude * 7.0f;
         transform.localRotation = Quaternion.Euler(newRot);
 
 		foreach (ParticleSystem ps in thrusters)
-			ps.enableEmission = Vector3.Dot(transform.parent.rigidbody.velocity, transform.parent.forward) > 0; // Enable thruster particle systems if we're moving forward
+			ps.enableEmission = Vector3.Dot(transform.parent.GetComponent<Rigidbody>().velocity, transform.parent.forward) > 0; // Enable thruster particle systems if we're moving forward
 		
     }
 }

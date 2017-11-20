@@ -12,10 +12,10 @@ public class LeapBasicObject : LeapGameObject {
         if (owner != null)
             return null;
 
-        if (canGoThroughGeometry && rigidbody)
+        if (canGoThroughGeometry && GetComponent<Rigidbody>())
         {
-            rigidbody.isKinematic = true;
-            rigidbody.useGravity = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<Rigidbody>().useGravity = false;
         }
         return base.Activate(h);
     }
@@ -26,10 +26,10 @@ public class LeapBasicObject : LeapGameObject {
 
         if (!isStatePersistent)
         {
-            if (canGoThroughGeometry && rigidbody)
+            if (canGoThroughGeometry && GetComponent<Rigidbody>())
             {
-                rigidbody.isKinematic = false;
-                rigidbody.useGravity = true;
+                GetComponent<Rigidbody>().isKinematic = false;
+                GetComponent<Rigidbody>().useGravity = true;
             }
 
             state = base.Release(h);
@@ -42,10 +42,10 @@ public class LeapBasicObject : LeapGameObject {
     {
         base.UpdateTransform(t);
 
-        if (!rigidbody.isKinematic)
+        if (!GetComponent<Rigidbody>().isKinematic)
         {
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = Vector3.zero;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
             // Necessary to switch Hand Updates for collisions
             if (collisionOccurred)

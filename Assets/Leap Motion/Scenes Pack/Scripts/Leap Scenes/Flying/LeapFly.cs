@@ -72,7 +72,7 @@ public class LeapFly : MonoBehaviour
             newRot.z = -handDiff.y * 20.0f;
 
             // adding the rot.z as a way to use banking (rolling) to turn.
-            newRot.y += handDiff.z * 3.0f - newRot.z * 0.03f * transform.parent.rigidbody.velocity.magnitude;
+            newRot.y += handDiff.z * 3.0f - newRot.z * 0.03f * transform.parent.GetComponent<Rigidbody>().velocity.magnitude;
             newRot.x = -(avgPalmForward.y - 0.1f) * 100.0f;
 
             float forceMult = 20.0f;
@@ -84,7 +84,7 @@ public class LeapFly : MonoBehaviour
             }
 
             transform.parent.localRotation = Quaternion.Slerp(transform.parent.localRotation, Quaternion.Euler(newRot), 0.1f);
-            transform.parent.rigidbody.velocity = transform.parent.forward * forceMult;
+            transform.parent.GetComponent<Rigidbody>().velocity = transform.parent.forward * forceMult;
         }
 
     }

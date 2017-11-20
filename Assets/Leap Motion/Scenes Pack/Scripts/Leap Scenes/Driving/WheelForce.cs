@@ -32,7 +32,7 @@ public class WheelForce : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        rigidbody.centerOfMass += new Vector3(0,-3f,0);
+        GetComponent<Rigidbody>().centerOfMass += new Vector3(0,-3f,0);
 
         SetValues();
 	}
@@ -127,7 +127,7 @@ public class WheelForce : MonoBehaviour {
             wheelRL.motorTorque = 0;
         }
 
-        var speedFactor = rigidbody.velocity.magnitude / lowestSteerAtSpeed;
+        var speedFactor = GetComponent<Rigidbody>().velocity.magnitude / lowestSteerAtSpeed;
 
         var currentSteerAngel = Mathf.Lerp(lowSpeedSteerAngel, highSpeedSteerAngel, speedFactor);
 

@@ -36,7 +36,7 @@ public class UnityHand : MonoBehaviour
 		handType.SetOwner(this);
 		handType.name = isRightHand ? "rightHand" : "leftHand";
 
-		renderer.enabled = false; // Disable visual indicator for Unityhand
+		GetComponent<Renderer>().enabled = false; // Disable visual indicator for Unityhand
 
 		if (initialLeapObject)
 		{

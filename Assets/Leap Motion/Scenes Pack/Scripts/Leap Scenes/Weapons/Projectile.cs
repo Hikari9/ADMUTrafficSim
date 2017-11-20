@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour {
 
 	
 	void Start () {
-        transform.rigidbody.AddForce(transform.forward * speed);
+        transform.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
 	}
 	
 	

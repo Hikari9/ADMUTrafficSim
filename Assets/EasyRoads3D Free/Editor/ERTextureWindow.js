@@ -208,7 +208,7 @@ for(child in road.transform){
 child.gameObject.renderer.material = mat;
 }
 }else{
-road.renderer.material = mat;
+road.GetComponent.<Renderer>().material = mat;
 }
 }
 }

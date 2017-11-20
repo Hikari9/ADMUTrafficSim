@@ -9,7 +9,7 @@ public class Glow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		originalColor = targetColor = this.gameObject.renderer.material.color;
+		originalColor = targetColor = this.gameObject.GetComponent<Renderer>().material.color;
 	}
 	
 	// Update is called once per frame
@@ -29,11 +29,11 @@ public class Glow : MonoBehaviour {
 		// Color deltaColor = new Color (targetColor.r - currentColor.r, targetColor.g - currentColor.g, targetColor.b - currentColor.b, targetColor.a - currentColor.a);            targetColor.a - currentColor.a);
 		Color need = targetColor - currentColor;
 		Color addend = need * Mathf.Min (1f, Time.deltaTime * colorFadeSpeed);
-		renderer.material.color += addend;
+		GetComponent<Renderer>().material.color += addend;
 	}
 
 	public Color GetColor () {
-		return renderer.material.color;
+		return GetComponent<Renderer>().material.color;
 	}
 
 	public void SetColor(Color color) {

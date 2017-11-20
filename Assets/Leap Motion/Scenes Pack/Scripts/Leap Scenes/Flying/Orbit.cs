@@ -8,12 +8,12 @@ public class Orbit : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rigidbody.velocity = m_initVelocity;
+        GetComponent<Rigidbody>().velocity = m_initVelocity;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rigidbody.velocity += (m_center.position - transform.position).normalized * 0.5f;
+        GetComponent<Rigidbody>().velocity += (m_center.position - transform.position).normalized * 0.5f;
     }
 }

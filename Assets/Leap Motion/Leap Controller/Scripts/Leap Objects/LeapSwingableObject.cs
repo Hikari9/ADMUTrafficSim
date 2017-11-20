@@ -27,9 +27,9 @@ public class LeapSwingableObject : LeapGameObject
         if (owner != null)
             return null;
 
-        rigidbody.isKinematic = true;
-        rigidbody.useGravity = false;
-        collider.enabled = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<Collider>().enabled = false;
 
         return new LeapSwingableState(this);
     }
@@ -40,9 +40,9 @@ public class LeapSwingableObject : LeapGameObject
 
         if (!isStatePersistent)
         {
-            rigidbody.isKinematic = false;
-            rigidbody.useGravity = true;
-            collider.enabled = true;
+            GetComponent<Rigidbody>().isKinematic = false;
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Collider>().enabled = true;
 
             state = base.Release(h);
         }
@@ -58,11 +58,11 @@ public class LeapSwingableObject : LeapGameObject
 
             if (swipe.enabled)
             {
-                collider.enabled = true;
+                GetComponent<Collider>().enabled = true;
             }
             else
             {
-                collider.enabled = false;
+                GetComponent<Collider>().enabled = false;
             }
         }
     }

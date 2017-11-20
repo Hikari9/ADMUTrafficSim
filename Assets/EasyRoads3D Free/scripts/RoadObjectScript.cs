@@ -224,7 +224,7 @@ foreach(Terrain terrain in terrains) {
 Terrains t = new Terrains();
 t.terrain = terrain;
 if(!terrain.gameObject.GetComponent<EasyRoads3DTerrainID>()){
-EasyRoads3DTerrainID terrainscript = (EasyRoads3DTerrainID)terrain.gameObject.AddComponent("EasyRoads3DTerrainID");
+EasyRoads3DTerrainID terrainscript = (EasyRoads3DTerrainID)terrain.gameObject.AddComponent<EasyRoads3DTerrainID>();
 string id = UnityEngine.Random.Range(100000000,999999999).ToString();
 terrainscript.terrainid = id;
 t.id = id;

@@ -18,7 +18,7 @@ public class LeapThrowableObject : LeapBasicObject
 	protected override void Start()
 	{
         base.Start();
-		rigidbody.isKinematic = false;
+		GetComponent<Rigidbody>().isKinematic = false;
 	}
 
 	public override LeapState Release(HandTypeBase h)
@@ -29,8 +29,8 @@ public class LeapThrowableObject : LeapBasicObject
 		{
             if (canGoThroughGeometry)
             {
-                rigidbody.isKinematic = false;
-                rigidbody.useGravity = true;
+                GetComponent<Rigidbody>().isKinematic = false;
+                GetComponent<Rigidbody>().useGravity = true;
             }
             ThrowHeldObject();
             state = base.Release(h);
@@ -48,10 +48,10 @@ public class LeapThrowableObject : LeapBasicObject
 
         VelocityCheck(dir);
 
-		if (!rigidbody.isKinematic)
+		if (!GetComponent<Rigidbody>().isKinematic)
 		{
-			rigidbody.velocity = Vector3.zero;
-			rigidbody.angularVelocity = Vector3.zero;
+			GetComponent<Rigidbody>().velocity = Vector3.zero;
+			GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
 			// Necessary to switch Hand Updates for collisions
 			if (collisionOccurred)
@@ -103,16 +103,16 @@ public class LeapThrowableObject : LeapBasicObject
         Vector3 angularVelocity = Vector3.Cross(previousAngle, currentAngle).normalized * angle * owner.unityHand.settings.angularStrength;
         
         // Throwing Velocity
-        rigidbody.velocity = highestVel;
+        GetComponent<Rigidbody>().velocity = highestVel;
 
         //Angular Velocity
-        if (rigidbody.maxAngularVelocity > owner.unityHand.settings.maxAngularThrowingVelocity)
+        if (GetComponent<Rigidbody>().maxAngularVelocity > owner.unityHand.settings.maxAngularThrowingVelocity)
         {
-            rigidbody.maxAngularVelocity = owner.unityHand.settings.maxAngularThrowingVelocity;
+            GetComponent<Rigidbody>().maxAngularVelocity = owner.unityHand.settings.maxAngularThrowingVelocity;
         }
-        rigidbody.angularVelocity = angularVelocity;
+        GetComponent<Rigidbody>().angularVelocity = angularVelocity;
 
-        Debug.Log("Object Thrown at Vel: " + rigidbody.velocity.magnitude);
-        Debug.Log("Object Thrown at Angular Vel: " + rigidbody.angularVelocity);
+        Debug.Log("Object Thrown at Vel: " + GetComponent<Rigidbody>().velocity.magnitude);
+        Debug.Log("Object Thrown at Angular Vel: " + GetComponent<Rigidbody>().angularVelocity);
     }
 }

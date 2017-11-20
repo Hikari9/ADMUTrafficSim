@@ -40,8 +40,8 @@ public class LeapGrenadeObject : LeapThrowableObject
                 if (!hit)
                     continue;
 
-                if (hit.rigidbody)
-                    hit.rigidbody.AddExplosionForce(1000, transform.position, 50);
+                if (hit.GetComponent<Rigidbody>())
+                    hit.GetComponent<Rigidbody>().AddExplosionForce(1000, transform.position, 50);
             }
         }
         currTime += Time.deltaTime;

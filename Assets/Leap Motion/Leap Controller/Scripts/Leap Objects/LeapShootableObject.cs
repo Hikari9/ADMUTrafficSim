@@ -15,8 +15,8 @@ public class LeapShootableObject : LeapGameObject {
         if (owner != null)
             return null;
 
-        rigidbody.isKinematic = true;
-        rigidbody.useGravity = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Rigidbody>().useGravity = false;
         return new LeapShootableState(this);
     }
 
@@ -26,8 +26,8 @@ public class LeapShootableObject : LeapGameObject {
 
         if (!isStatePersistent)
         {
-            rigidbody.isKinematic = false;
-            rigidbody.useGravity = true;
+            GetComponent<Rigidbody>().isKinematic = false;
+            GetComponent<Rigidbody>().useGravity = true;
             state = base.Release(h);
         }
 
@@ -41,7 +41,7 @@ public class LeapShootableObject : LeapGameObject {
 
     void UpdateShootable(HandTypeBase t)
     {
-        Collider o = collider;
+        Collider o = GetComponent<Collider>();
 
         Vector3 handOffset = new Vector3();
         Vector3 grabOffsetPos = new Vector3();
