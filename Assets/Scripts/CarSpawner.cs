@@ -30,8 +30,8 @@ public class CarSpawner : MonoBehaviour {
 					// car destroyed
 					Q.RemoveFirst ();
 				else if (car.transform.localPosition.z < 10 && car.GetComponent<CarMovement>().movement != CarMovement.STOP) {
-					car.GetComponent<CarMovement>().movement = CarMovement.NORMAL;
-					Q.RemoveFirst ();
+                    car.GetComponent<CarMovement>().movement = CarMovement.NORMAL;
+                    Q.RemoveFirst ();
 				}
 				else break;
 			}
@@ -78,7 +78,7 @@ public class CarSpawner : MonoBehaviour {
 		return Q.Last.Value;
 	}
 
-	public void Spawn(float degrees) {
+	public GameObject Spawn(float degrees) {
 		if (cars.Length == 0) {
 			throw new UnityException("No car prefabs set!");
 		}
@@ -104,6 +104,7 @@ public class CarSpawner : MonoBehaviour {
 		
 		parent.transform.Rotate (new Vector3 (0, degrees, 0));
 		AddCarToRoad (car, currentRoad);
+        return car;
 		/*
 
 		GameObject road = Command.GetRoadFromAngle (degrees);
@@ -140,22 +141,22 @@ public class CarSpawner : MonoBehaviour {
 
 	public void SpawnNorth() {
 		// Spawn (0, 50);
-		Spawn (0);
+        Spawn (0).GetComponent<CarMovement>().SetSpawnLabel("North");
 	}
 
 	public void SpawnEast() {
 		// Spawn (50, 0);
-		Spawn (90);
-	}
+		Spawn (90).GetComponent<CarMovement>().SetSpawnLabel("East");
+    }
 
 	public void SpawnSouth() {
 		// Spawn (0, -50);
-		Spawn (180);
-	}
+		Spawn (180).GetComponent<CarMovement>().SetSpawnLabel("South");
+    }
 
 	public void SpawnWest() {
 		// Spawn (-50, 0);
-		Spawn (270);
-	}
+		Spawn (270).GetComponent<CarMovement>().SetSpawnLabel("West");
+    }
 
 }
