@@ -28,16 +28,31 @@ public class UnsupervisedIntersectionAgent : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Color target;
-        if (movement.carsAcross.Count > 0 && movement.targetVelocity.Equals(Vector3.zero))
-            target = stop;
-        else {
-            // go if all other colliders are stopped
-            target = go;
-            foreach (Transform car in carsToWatchOutFor.Keys) {
-                UnsupervisedIntersectionAgent agent = car.GetComponent<UnsupervisedIntersectionAgent>();
-                if (agent.renderer.material.color != agent.stop) {
-                    target = slow;
+        if (movement.carsInFront.Count > 0) {
+            // have defaults
+            if (movement.IsBeforeIntersection()) {
+                target = slow;
+            } else {
+                target = go;
+            }
+            // check if at least one is stopped
+            foreach (CarMovement frontCar in movement.carsInFront.Keys) {
+                if (frontCar.targetVelocity.Equals(Vector3.zero)) {
+                    target = stop;
                     break;
+                }
+            }
+        } else {
+            if (movement.carsAcross.Count > 0 && movement.targetVelocity.Equals(Vector3.zero))
+                target = stop;
+            else {
+                // go if all other colliders are stopped
+                target = go;
+                foreach (Transform car in carsToWatchOutFor.Keys) {
+                    if (car.parent.localPosition.z < transform.parent.localPosition.z) {
+                        target = slow;
+                        break;
+                    }
                 }
             }
         }
