@@ -1,12 +1,9 @@
-Team:
-Marco De Santos
-Lacuna Martinez
-Icon Ortega
-Nina Sanchez
-Bagani Sularte
-Rico Tiongson
+AI Masters
+- Moira Pineda
+- Tifanny Udquin
+- Jacob Chua
+- Sean Gonda
+- Rico Tiongson
 
-Mentor:
-Nicko Caluya
-
-(c) 2014-2015 Ateneo de Manila University
+How to Run:
+1. Open CS171.exe
